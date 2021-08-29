@@ -1,6 +1,6 @@
-# Agendamento de Serviços de Oficina - 1.0
+# Agendamento de Serviços de Oficina - 1.1
 
-Este projeto tem como objetivo realizar o agendamento para serviços mecânicos realizados por uma oficina.
+Esse projeto tem como objetivo auxiliar o agendamento para serviços mecânicos realizados por uma oficina, otimizando o gerenciamento de serviços ofertados por ela e diminuindo o tempo de atendimento e entregando os serviços de forma mais consistente.
 
 Atualmente o projeto não possui uma implementação, mas está aberto a receber contribuições de código que representem as especificação aqui presente.
 
