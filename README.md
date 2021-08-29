@@ -1,6 +1,6 @@
-# Agendamento de Serviços de Oficina - 1.0
+# Agendamento de Serviços - Oficina Márcio Gley 1.0
 
-Este projeto tem como objetivo realizar o agendamento para serviços mecânicos realizados por uma oficina.
+Esse projeto tem como objetivo auxiliar o agendamento para serviços mecânicos realizados por uma oficina, otimizando o gerenciamento de serviços ofertados por ela e diminuindo o tempo de atendimento e entregando os serviços de forma mais consistente.
 
 Atualmente o projeto não possui uma implementação, mas está aberto a receber contribuições de código que representem as especificação aqui presente.
 
@@ -25,3 +25,7 @@ Todo material está publicado sob licença [GPL-3.0](https://www.gnu.org/license
 * [Diagrama de classes de domínio](./docs/diagramas/diagrama_classes.JPG)
 
 * Diagrama de arquitetura
+### Equipe
+
+| [<img src="https://github.com/gabrielfontineli.png?size=115" width=115><br><sub>Gabriel Fontineli :notes:</sub>](https://github.com/gabrielfontineli) | [<img src="https://github.com/JustNat.png?size=115" width=115><br><sub>Gabriel Pereira :fish:</sub>](https://github.com/JustNat) | [<img src="https://github.com/gabrielgui13.png?size=115" width=115><br><sub>Gabriel Guilherme :older_man:</sub>](https://github.com/gabrielgui13) | [<img src="https://github.com/rafael52468.png?size=115" width=115><br><sub>Rafael Ribeiro :muscle: </sub>](https://github.com/rafael52468) | [<img src="https://github.com/numb0y.png?size=115" width=115><br><sub>Lucas Kramer:boom:</sub>](https://github.com/numb0y) 
+| :---: | :---: | :---: | :---: | :---: | 
