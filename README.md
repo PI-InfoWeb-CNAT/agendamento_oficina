@@ -1,4 +1,4 @@
-# Agendamento de Serviços de Oficina - 1.1
+# Agendamento de Serviços - Oficina Márcio Gley
 
 Esse projeto tem como objetivo auxiliar o agendamento para serviços mecânicos realizados por uma oficina, otimizando o gerenciamento de serviços ofertados por ela e diminuindo o tempo de atendimento e entregando os serviços de forma mais consistente.
 
