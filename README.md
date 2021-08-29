@@ -25,3 +25,7 @@ Todo material está publicado sob licença [GPL-3.0](https://www.gnu.org/license
 * [Diagrama de classes de domínio](./docs/diagramas/diagrama_classes.JPG)
 
 * Diagrama de arquitetura
+### Equipe
+
+| [<img src="https://github.com/gabrielfontineli.png?size=115" width=115><br><sub>Gabriel Fontineli :notes:</sub>](https://github.com/gabrielfontineli) | [<img src="https://github.com/JustNat.png?size=115" width=115><br><sub>Gabriel Pereira :fish:</sub>](https://github.com/JustNat) | [<img src="https://github.com/gabrielgui13.png?size=115" width=115><br><sub>Gabriel Guilherme :older_man:</sub>](https://github.com/gabrielgui13) | [<img src="https://github.com/rafael52468.png?size=115" width=115><br><sub>Rafael Ribeiro :muscle: </sub>](https://github.com/rafael52468) | [<img src="https://github.com/numb0y.png?size=115" width=115><br><sub>Lucas Kramer:boom:</sub>](https://github.com/numb0y) 
+| :---: | :---: | :---: | :---: | :---: | 
