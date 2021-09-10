@@ -11,24 +11,24 @@
 
 ### 1. Objetivo do Projeto 
 
-O projeto __Agendamento de Serviços - Oficina do Márcio__ tem como objetivo prover uma solução simples, acessível e padronizada para o agendamento de serviços mecânicos através da Internet.
+O projeto __Oficina do Márcio__ tem como objetivo prover uma solução simples, acessível e padronizada para o agendamento de serviços mecânicos através da Internet.
 
 ### 2. Descrição do Problema 
 
 |         __        | __   |
 |:------------------|:-----|
-| **_O problema_**    | Marcar um horário de atendimento com mecânico de forma simples enviando pré-diagnóstico e causas do contato com o profissional. |
+| **_O problema_**    | Marcar um horário de atendimento com mecânico de forma simples enviando um relato do problema identificado no veículo. |
 | **_afetando_**      | Profissionais, mecânicos e empresas, como a Oficina do Márcio, que fornecem serviços de manutenção de veículos à sociedade e pessoas que precisam contratar esses serviços, agendando um horário de atendimento. |
-| **_cujo impacto é_**| Dificuldade no  atendimento, dificuldade na contratação dos serviços, perda de clientes (empresas e profissionais) e não realização de serviços para clientes por conta da falta de organização do tempo. |
-| **_uma boa solução seria_** | Um sistema na Internet que permita a Oficina do Márcio informar a disponibilidade de horários de atendimento, facilitando o agendamento dos atendimentos para seus clientes. E para os clientes, um sistema que facilite a busca dos profissionais da oficina para agendamento de um atendimento e/ou orçamento de seus veículos. |
+| **_cujo impacto é_**| Dificuldade no atendimento, dificuldade na contratação dos serviços, perda de clientes (empresas e profissionais) e não realização de serviços para clientes por conta da falta de organização do tempo. |
+| **_uma boa solução seria_** | Um sistema na Internet que permita a Oficina do Márcio informar os tipos de serviços realizados pela empresa, a disponibilidade de horários de atendimento, facilitando o agendamento para seus clientes. E para os clientes, um sistema que facilite o agendamento de um atendimento e/ou orçamento para um determinado serviço no seu veículo. |
 
 ### 3. Descrição dos Usuários
 
 | Nome | Descrição | Responsabilidades |
 |:---  |:--- |:--- |
-| Administrador  | Realiza as atividades básicas para o início da operação e manutenção da operação | Mantém o cadastro dos funcionários responsáveis pela operação da agenda de serviços e gerencia o funcionamento do sistema |
-| Funcionário | Realiza as atividades referentes aos agendamentos e orçamentos dos serviços | Mantém o cadastro de serviços e veículos; Consulta a situação das agendas dos serviços; Mantém a agenda de atendimento; Confirma e o exclui agendamento de clientes |
-| Cliente | Agenda os atendimentos informando um pré-diagnóstico dos problemas | Realiza o próprio cadastro no sistema; consulta a agenda de serviços para verificar a disponibilidade de horários de atendimento; Agenda os seus serviços; Consulta seus agendamentos e cancela um agendamento |
+| Administrador  | Realiza as atividades básicas para o início e manutenção da operação do sistema | Mantém o cadastro dos funcionários responsáveis pela operação da agenda de serviços e gerencia o funcionamento do sistema |
+| Funcionário | Realiza as atividades referentes aos agendamentos, orçamentos e realização dos serviços | Mantém o cadastro de serviços, mantém o cadastro de produtos usados na manutenção dos veículos; mantém o cadastro dos clientes e veículos; mantém a agenda de atendimento; registra os serviços realizados, totalizando o custo do serviço, incluindo mão-de-obra e produtos  |
+| Cliente | Agenda os atendimentos informando um pré-diagnóstico dos problemas | Realiza o próprio cadastro no sistema; consulta a agenda de serviços para verificar a disponibilidade de horários de atendimento; agenda os seus serviços; consulta e cancela um agendamento; consulta os serviços já realizados |
 
 ### 4. Descrição do Ambiente dos Usuários
 
@@ -50,7 +50,7 @@ As alternativas concorrentes são, em geral, específicas para uma empresa ou pr
 
 ### 7.	Visão Geral do Produto
 
-Em resumo, o sistema de Agendamento de Serviços - Oficina do Márcio é uma aplicação que permite a empresa de mecânica registrar suas disponibilidades de atendimento aos seus clientes, de forma que estes possam consultar e agendar horários para realização de serviços e orçamento de seus veículos.
+Em resumo, o sistema Oficina do Márcio é uma aplicação que permite a empresa de mecânica registrar suas disponibilidades de atendimento aos seus clientes, de forma que estes possam consultar e agendar horários para realização de serviços e orçamento de seus veículos.
 
 O sistema deve ter uma interface amigável e permitir o acesso concorrente de clientes para agendamento de um horário de atendimento de forma simples.
 
