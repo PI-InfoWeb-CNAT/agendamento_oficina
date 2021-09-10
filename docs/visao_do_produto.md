@@ -6,30 +6,30 @@
 
 |  Data  | Versão | Descrição | Autor |
 |:-------|:-------|:----------|:------|
-| 19/06/2021 |  **`1.00`** | Versão Inicial  | Gilbert Azevedo |
+| 02/09/2021 |  **`1.02`** | Versão inicial  | Gabriel Guilherme |
 
 
 ### 1. Objetivo do Projeto 
 
-O projeto __Agendamento de Serviços__ tem como objetivo prover uma solução simples, acessível e padronizada para o agendamento de serviços através da Internet.
+O projeto __Agendamento de Serviços - Oficina do Márcio__ tem como objetivo prover uma solução simples, acessível e padronizada para o agendamento de serviços mecânicos através da Internet.
 
 ### 2. Descrição do Problema 
 
 |         __        | __   |
 |:------------------|:-----|
-| **_O problema_**    | Marcar um horário de atendimento com profissionais, como dentistas, médicos, psicólogos, dentro outros, e empresas prestadoras de serviços, como concessionárias de automóveis, eletrônicas, pet-shops, etc.  |
-| **_afetando_**      | Profissionais e empresas que fornecem diversos serviços à sociedade e pessoas que precisam contratar esses serviços, agendando um horário de atendimento. |
-| **_cujo impacto é_**| Dificuldade no agendamento do atendimento, dificuldade na contratação dos serviços, perda de clientes (empresas e profissionais) e não realização de serviços (clientes). |
-| **_uma boa solução seria_** | Um sistema na Internet que permita aos profissionais e empresas informar a disponibilidade de horários de atendimento, facilitando o agendamento desses atendimentos para seus clientes. E para os clientes, um sistema que facilite a busca de profissionais e empresas para agendamento de um atendimento. |
+| **_O problema_**    | Marcar um horário de atendimento com mecânico de forma simples enviando pré-diagnóstico e causas do contato com o profissional. |
+| **_afetando_**      | Profissionais, mecânicos e empresas, como a Oficina do Márcio, que fornecem serviços de manutenção de veículos à sociedade e pessoas que precisam contratar esses serviços, agendando um horário de atendimento. |
+| **_cujo impacto é_**| Dificuldade no  atendimento, dificuldade na contratação dos serviços, perda de clientes (empresas e profissionais) e não realização de serviços para clientes por conta da falta de organização do tempo. |
+| **_uma boa solução seria_** | Um sistema na Internet que permita a Oficina do Márcio informar a disponibilidade de horários de atendimento, facilitando o agendamento dos atendimentos para seus clientes. E para os clientes, um sistema que facilite a busca dos profissionais da oficina para agendamento de um atendimento e/ou orçamento de seus veículos. |
 
 ### 3. Descrição dos Usuários
 
 | Nome | Descrição | Responsabilidades |
 |:---  |:--- |:--- |
-| Administrador  | Realiza as atividades básicas para o início da operação do sistema | Mantém o cadastro dos funcionários responsáveis pela operação da agenda de serviços |
-| Funcionário  | Realiza as atividades relacionadas ao controle da agenda de serviços | Mantém o cadastro de serviços; consulta a situação das agendas de serviços; mantém a agenda de atendimento; confirma o agendamento de clientes e exclui o agendamento de clientes |
-| Cliente | Realiza as atividades relacionadas ao agendamento do serviço | Realiza o próprio cadastro no sistema; consulta a agenda de serviços e disponibilidades de atendimento; agenda um serviço; consulta seus agendamentos e cancela um agendamento |
-    
+| Administrador  | Realiza as atividades básicas para o início da operação e manutenção da operação | Mantém o cadastro dos funcionários responsáveis pela operação da agenda de serviços e gerencia o funcionamento do sistema |
+| Funcionário | Realiza as atividades referentes aos agendamentos e orçamentos dos serviços | Mantém o cadastro de serviços e veículos; Consulta a situação das agendas dos serviços; Mantém a agenda de atendimento; Confirma e o exclui agendamento de clientes |
+| Cliente | Agenda os atendimentos informando um pré-diagnóstico dos problemas | Realiza o próprio cadastro no sistema; consulta a agenda de serviços para verificar a disponibilidade de horários de atendimento; Agenda os seus serviços; Consulta seus agendamentos e cancela um agendamento |
+
 ### 4. Descrição do Ambiente dos Usuários
 
 Em várias atividades do cotidiano humano é necessário agendar um horário determinado para que uma ação específica seja realizada. Isso ocorre, por exemplo, quando um automóvel vai ser revisado em uma oficina, quando um médico vai consultar um paciente ou quando consertos diversos (hidráulicos, elétricos, dentre outros) são realizados em uma residência. 
@@ -50,30 +50,30 @@ As alternativas concorrentes são, em geral, específicas para uma empresa ou pr
 
 ### 7.	Visão Geral do Produto
 
-Em resumo, o sistema de Agendamento de Serviços é uma aplicação que permite empresas e profissionais registrarem suas disponibilidades de atendimento aos seus clientes, de forma que estes possam consultar e agendar horários para realização de serviços.
+Em resumo, o sistema de Agendamento de Serviços - Oficina do Márcio é uma aplicação que permite a empresa de mecânica registrar suas disponibilidades de atendimento aos seus clientes, de forma que estes possam consultar e agendar horários para realização de serviços e orçamento de seus veículos.
 
-O sistema deve ter uma interface amigável e permitir o acesso concorrente de clientes para agendamento de um horário de atendimento.
+O sistema deve ter uma interface amigável e permitir o acesso concorrente de clientes para agendamento de um horário de atendimento de forma simples.
 
 ### 8. Requisitos Funcionais
 
 | Código | Nome | Descrição |
 |:---  |:--- |:--- |
-| RF01 | Entrar no sistema | Usuários devem logar no sistema para acessar as funcionalidades relacionadas ao agendamento |
-| RF02 | Cadastro de Funcionários | Administrador do sistema mantém o cadastro dos funcionários responsáveis pelo gerenciamento das agendas |
-| RF03 | Gerenciamento de Serviços |  Funcionário mantém a relação de serviços prestados pela empresa ou profissional |
-| RF04 | Gerenciamento da Agenda | Funcionário registra os horários disponíveis de atendimento, confirma e cancela o agendamento de clientes |
-| RF05 | Cadastro de Clientes | Cliente deve realizar o auto cadastramento |
-| RF06 | Consulta de Agendas | Cliente consulta agendas de atendimento dos serviços disponíveis, podendo agendar um serviço  |
-| RF07 | Consulta de Agendamento | Cliente consulta atendimentos agendados, podendo cancelar um agendamento |
+| **RF01** | Entrar no sistema | Usuários devem logar no sistema usando uma chave única para acessar as funcionalidades relacionadas ao agendamento |
+| **RF02** | Cadastro de Funcionários | Administrador do sistema mantém o cadastro dos funcionários responsáveis pelo gerenciamento das agendas e prestação de serviços |
+| **RF03** | Gerenciamento de Serviços | Funcionário mantém a relação de serviços prestados pela Oficina do Márcio |
+| **RF04** | Gerenciamento da Agenda | Funcionário registra os horários disponíveis de atendimento, confirma e cancela o agendamento de clientes |
+| **RF05** | Cadastro de Clientes | Cliente deve realizar o auto cadastramento |
+| **RF06** | Consulta de Agendas | Cliente consulta agendas de atendimento dos serviços disponíveis, podendo agendar um serviço em um horário compatível |
+| **RF07** | Consulta de Agendamento | Cliente consulta atendimentos agendados, podendo cancelar um agendamento |
 
 
 ### 9. Requisitos Não-funcionais
 
  Código | Nome | Descrição | Categoria | Classificação
 |:---  |:--- |:--- |:--- |:--- |
-| RNF01 | Design responsivo | O sistema deve adaptar-se a qualquer tamanho de tela de dispositivo, seja, computador, tablets ou smart phones. | Usabilidade| Obrigatório |
-| RNF02 | Criptografia de dados| Senhas de usuários devem ser gravadas de forma criptografada no banco de dados. | Segurança | Obrigatório |
-| RNF03 | Controle de acesso | Só usuários autenticados podem ter acesso ao sistema, com exceção ao auto cadastramento do usuário. | Segurança | Obrigatório |
-| RNF04 | Tempo de resposta |A comunicação entre o servidor e o cliente deve ocorrer em tempo hábil | Performance | Desejável |
+| RNF01 | Design responsivo | O sistema deve adaptar-se a qualquer tamanho de tela de dispositivo, seja, computador, tablets ou smart phones. | Usabilidade | Obrigatório |
+| RNF02 | Criptografia de dados | Senhas de usuários e informações delicadas devem ser gravadas de forma criptografada no banco de dados. | Segurança | Obrigatório |
+| RNF03 | Controle de acesso | Só usuários autenticados podem ter acesso ao sistema, seja um funcionário autorizado no lado do funcionário, e assim também para o cliente | Segurança | Obrigatório |
+| RNF04 | Tempo de resposta | A comunicação entre o servidor e o cliente deve ocorrer em tempo hábil | Performance | Desejável |
 | RNF05 | Sistema Web | A aplicação deve ser um site. | Arquitetura | Obrigatório |
-| RNF06 | Dados pessoais | Os clientes não devem visualizar dados de outros clientes (na agenda, por exemplo). | Privacidade | Obrigatório |
+| RNF06 | Dados pessoais | Os clientes não devem visualizar dados de outros clientes, apenas a disponibilidade (na agenda, por exemplo). | Privacidade | Obrigatório |
