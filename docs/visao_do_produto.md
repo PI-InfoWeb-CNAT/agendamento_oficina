@@ -26,9 +26,9 @@ O projeto __Agendamento de Serviços - Oficina do Márcio__ tem como objetivo pr
 
 | Nome | Descrição | Responsabilidades |
 |:---  |:--- |:--- |
-| Administrador  | Realiza as atividades básicas para o início e manutenção da operação do sistema | Mantém o cadastro dos funcionários responsáveis pela operação da agenda de serviços e gerencia o funcionamento do sistema |
-| Funcionário | Realiza as atividades referentes aos agendamentos e orçamento dos serviços | Mantém o cadastro de serviços e veículos; Consulta a situação das agendas dos serviços; Mantém e gerencia a agenda de atendimento; Confirma e/ou o exclui agendamento de clientes |
-| Cliente | Agenda os atendimentos e dá um pré-diagnóstico dos problemas | Realiza o próprio cadastro no sistema; consulta a agenda de serviços e disponibilidades de atendimento para achar um horário compatível para si; Agenda os seus serviços; Consulta seus agendamentos e cancela um agendamento |
+| Administrador  | Realiza as atividades básicas para o início da operação e manutenção da operação | Mantém o cadastro dos funcionários responsáveis pela operação da agenda de serviços e gerencia o funcionamento do sistema |
+| Funcionário | Realiza as atividades referentes aos agendamentos e orçamentos dos serviços | Mantém o cadastro de serviços e veículos; Consulta a situação das agendas dos serviços; Mantém a agenda de atendimento; Confirma e o exclui agendamento de clientes |
+| Cliente | Agenda os atendimentos informando um pré-diagnóstico dos problemas | Realiza o próprio cadastro no sistema; consulta a agenda de serviços para verificar a disponibilidade de horários de atendimento; Agenda os seus serviços; Consulta seus agendamentos e cancela um agendamento |
 
 ### 4. Descrição do Ambiente dos Usuários
 
