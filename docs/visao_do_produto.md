@@ -65,6 +65,7 @@ O sistema deve ter uma interface amigável e permitir o acesso concorrente de cl
 | **RF05** | Cadastro de Clientes | Cliente deve realizar o auto cadastramento |
 | **RF06** | Consulta de Agendas | Cliente consulta agendas de atendimento dos serviços disponíveis, podendo agendar um serviço em um horário compatível |
 | **RF07** | Consulta de Agendamento | Cliente consulta atendimentos agendados, podendo cancelar um agendamento |
+| **RF08** | Recuperação de senha do usuário | Usuário solicita recuperação de senha, enviando uma mensagem para seu e-mail |
 
 
 ### 9. Requisitos Não-funcionais
