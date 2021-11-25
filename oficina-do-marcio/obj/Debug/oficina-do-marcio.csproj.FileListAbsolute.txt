@@ -84,3 +84,9 @@ C:\Users\gabri\Documents\github\agendamento_oficina\oficina-do-marcio\obj\Debug\
 C:\Users\gabri\Documents\github\agendamento_oficina\oficina-do-marcio\obj\Debug\oficina-do-marcio.csproj.CopyComplete
 C:\Users\gabri\Documents\github\agendamento_oficina\oficina-do-marcio\obj\Debug\oficina-do-marcio.dll
 C:\Users\gabri\Documents\github\agendamento_oficina\oficina-do-marcio\obj\Debug\oficina-do-marcio.pdb
+C:\Users\gabri\Documents\github\agendamento_oficina\oficina-do-marcio\bin\EntityFramework.dll
+C:\Users\gabri\Documents\github\agendamento_oficina\oficina-do-marcio\bin\EntityFramework.SqlServer.dll
+C:\Users\gabri\Documents\github\agendamento_oficina\oficina-do-marcio\bin\EntityFramework.xml
+C:\Users\gabri\Documents\github\agendamento_oficina\oficina-do-marcio\bin\EntityFramework.SqlServer.xml
+C:\Users\gabri\Documents\github\agendamento_oficina\oficina-do-marcio\obj\Debug\oficina_do_marcio.Migrations.CreateMecanico.resources
+C:\Users\gabri\Documents\github\agendamento_oficina\oficina-do-marcio\obj\Debug\oficina-do-marcio.csproj.GenerateResource.cache
