@@ -10,9 +10,12 @@ namespace oficina_do_marcio.Models
 {
     public class Mecanico
     {
-        [Key]
+        [Key] [MaxLength(11)]
         public string Cpf { get; set; }
+        
+        [Required] [MaxLength(50)]
         public string Nome { get; set; }
+        [MaxLength(15)] 
         public string Telefone { get; set; }
     }
 }
