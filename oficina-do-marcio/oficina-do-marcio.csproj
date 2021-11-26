@@ -132,12 +132,17 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202111252240556_CreateMecanico.cs" />
-    <Compile Include="Migrations\202111252240556_CreateMecanico.designer.cs">
-      <DependentUpon>202111252240556_CreateMecanico.cs</DependentUpon>
+    <Compile Include="Migrations\202111262032323_CreateTables.cs" />
+    <Compile Include="Migrations\202111262032323_CreateTables.designer.cs">
+      <DependentUpon>202111262032323_CreateTables.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Agendamento.cs" />
+    <Compile Include="Models\Cliente.cs" />
     <Compile Include="Models\Mecanico.cs" />
+    <Compile Include="Models\Orcamento.cs" />
+    <Compile Include="Models\Produto.cs" />
+    <Compile Include="Models\Servico.cs" />
     <Compile Include="Models\Veiculo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -194,8 +199,8 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202111252240556_CreateMecanico.resx">
-      <DependentUpon>202111252240556_CreateMecanico.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202111262032323_CreateTables.resx">
+      <DependentUpon>202111262032323_CreateTables.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

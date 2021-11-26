@@ -1,0 +1,27 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace oficina_do_marcio.Models
+{
+    [Table("Agendamentos")]
+    public class Agendamento
+    {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int Id { get; set; }
+
+        [Required]
+        [StringLength(1000)]
+        public string Descricao { get; set; }
+
+        [Required]
+        [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
+        public DateTime? Data_agendamento { get; set; } = DateTime.Now;
+
+        public DateTime? Data_servico { get; set; }
+    }
+}
