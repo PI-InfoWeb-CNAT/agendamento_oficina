@@ -136,6 +136,10 @@
     <Compile Include="Migrations\202111262032323_CreateTables.designer.cs">
       <DependentUpon>202111262032323_CreateTables.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202111262124538_QueryTest.cs" />
+    <Compile Include="Migrations\202111262124538_QueryTest.designer.cs">
+      <DependentUpon>202111262124538_QueryTest.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Agendamento.cs" />
     <Compile Include="Models\Cliente.cs" />
@@ -201,6 +205,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202111262032323_CreateTables.resx">
       <DependentUpon>202111262032323_CreateTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111262124538_QueryTest.resx">
+      <DependentUpon>202111262124538_QueryTest.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

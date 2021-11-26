@@ -25,7 +25,5 @@ namespace oficina_do_marcio.Models
         [Required]
         [Range(0, 2050)]
         public int Ano { get; set; }
-
-
     }
 }

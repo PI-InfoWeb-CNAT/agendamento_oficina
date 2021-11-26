@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -22,8 +23,8 @@ namespace oficina_do_marcio.Models
         [StringLength(1000)]
         public string Descricao { get; set; }
 
-        [Required]
         [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
-        public DateTime? Data_orcamento { get; set; } = DateTime.Now;
+        [DefaultValue("getutcdate()")]
+        public DateTime Data_orcamento { get; set; } = DateTime.Now;
     }
 }

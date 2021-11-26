@@ -13,7 +13,7 @@
                     {
                         Id = c.Int(nullable: false, identity: true),
                         Descricao = c.String(nullable: false, maxLength: 1000),
-                        Data_agendamento = c.DateTime(nullable: false),
+                        Data_agendamento = c.DateTime(),
                         Data_servico = c.DateTime(),
                     })
                 .PrimaryKey(t => t.Id);
@@ -28,19 +28,21 @@
                         Email = c.String(nullable: false, maxLength: 100),
                         Senha = c.String(nullable: false, maxLength: 255),
                         Endereco = c.String(maxLength: 255),
-                        Data_cadastro = c.DateTime(nullable: false),
+                        Data_cadastro = c.DateTime(),
                     })
-                .PrimaryKey(t => t.Cpf);
+                .PrimaryKey(t => t.Cpf)
+                .Index(t => t.Email);
             
             CreateTable(
                 "dbo.Mecanicos",
                 c => new
                     {
                         Cpf = c.String(nullable: false, maxLength: 11),
+                        Admin = c.Boolean(nullable: false),
                         Senha = c.String(nullable: false, maxLength: 255),
                         Nome = c.String(nullable: false, maxLength: 50),
                         Telefone = c.String(maxLength: 15),
-                        Data_cadastro = c.DateTime(nullable: false),
+                        Data_cadastro = c.DateTime(),
                     })
                 .PrimaryKey(t => t.Cpf);
             
@@ -110,6 +112,7 @@
             DropIndex("dbo.Servicos", new[] { "MecanicoId" });
             DropIndex("dbo.Servicos", new[] { "VeiculoId" });
             DropIndex("dbo.Servicos", new[] { "AgendamentoId" });
+            DropIndex("dbo.Clientes", new[] { "Email" });
             DropTable("dbo.Veiculos");
             DropTable("dbo.Servicos");
             DropTable("dbo.Produtos");
