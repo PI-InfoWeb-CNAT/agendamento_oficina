@@ -34,8 +34,12 @@ namespace oficina_do_marcio.Models
         [MaxLength(255)]
         public string Endereco { get; set; }
 
-        [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         [DefaultValue("getutcdate()")]
         public DateTime? Data_cadastro { get; set; } = DateTime.Now;
+
+        public Cliente()
+        {
+            this.Data_cadastro = DateTime.UtcNow;
+        }
     }
 }
