@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Meu Aplicativo ASP.NET</title>
     @Styles.Render("~/Content/css")
-    @Scripts.Render("~/Scripts/modernizr-2.8.3.js")
+    @Scripts.Render("~/bundles/modernizr")
 </head>
 <body class="p-0 mb-3">
     @Html.Partial("_Header")
@@ -18,8 +18,8 @@
         </footer>
     </div>
 
-    @Scripts.Render("~/Scripts/jquery")
-    @Scripts.Render("~/Scripts/bootstrap")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
 </body>
 </html>
