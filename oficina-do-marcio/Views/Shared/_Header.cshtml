@@ -1,12 +1,20 @@
-﻿<div class="navbar navbar-inverse navbar-fixed-top bg-body">
-    <div class="container">
-        <div class="navbar-header">
-            @Html.ActionLink("Oficina do Marcio", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            <ul class="nav navbar-nav">
-                <li>@Html.ActionLink("Início", "Index", "Home")</li>
-                <li>@Html.ActionLink("Sobre", "About", "Home")</li>
-                <li>@Html.ActionLink("Contato", "Contact", "Home")</li>
-            </ul>
-        </div>
+﻿<nav class="navbar navbar-expand-sm navbar-dark bg-primary-color mb-5 px-5">
+    @Html.ActionLink("Oficina do Marcio", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navPaginaInicial" aria-controls="navPaginaInicial">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse d-inline-flex justify-content-end" id="navPaginaInicial">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                @Html.ActionLink("Início", "Index", "Home", new { @class = "nav-link" })
+            </li>
+            <li class="nav-item">
+                @Html.ActionLink("Sobre", "About", "Home", new { @class = "nav-link" })
+            </li>
+            <li class="nav-item">
+                @Html.ActionLink("Contato", "Contact", "Home", new { @class = "nav-link" })
+            </li>
+        </ul>
     </div>
-</div>
+</nav>

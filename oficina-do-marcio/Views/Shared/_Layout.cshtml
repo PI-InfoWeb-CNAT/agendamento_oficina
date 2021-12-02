@@ -8,12 +8,12 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/Scripts/modernizr-2.8.3.js")
 </head>
-<body>
+<body class="p-0 mb-3">
     @Html.Partial("_Header")
     <div class="container body-content">
         @RenderBody()
         <hr />
-        <footer>
+        <footer class="d-inline-flex align-bottom">
             <p>&copy; @DateTime.Now.Year - Oficina do Marcio</p>
         </footer>
     </div>

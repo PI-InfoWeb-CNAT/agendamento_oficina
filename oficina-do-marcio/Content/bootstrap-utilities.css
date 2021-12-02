@@ -1294,7 +1294,7 @@
 /* rtl:end:remove */
 .text-primary {
   --bs-text-opacity: 1;
-  color: rgba(var(--bs-primary-rgb), var(--bs-text-opacity)) !important;
+  color: rgb(var(--bs-primary-color), var(--bs-text-opacity)) !important;
 }
 
 .text-secondary {
@@ -1385,7 +1385,7 @@
 
 .bg-primary {
   --bs-bg-opacity: 1;
-  background-color: rgba(var(--bs-primary-rgb), var(--bs-bg-opacity)) !important;
+  background-color: rgba(var(--bg-primary-color), var(--bs-bg-opacity)) !important;
 }
 
 .bg-secondary {
