@@ -7,14 +7,18 @@
     <div class="collapse navbar-collapse d-inline-flex justify-content-end" id="navPaginaInicial">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                @Html.ActionLink("Início", "Index", "Home", new { @class = "nav-link" })
+                @Html.ActionLink("CONTATO", "Contact", "Home", new { @class = "nav-link" })
             </li>
             <li class="nav-item">
-                @Html.ActionLink("Sobre", "About", "Home", new { @class = "nav-link" })
+                @Html.ActionLink("SOBRE", "About", "Home", new { @class = "nav-link" })
             </li>
             <li class="nav-item">
-                @Html.ActionLink("Contato", "Contact", "Home", new { @class = "nav-link" })
+                @Html.ActionLink("FAÇA SEU AGENDAMENTO", "Index", "Home", new { @class = "nav-link" })
             </li>
+            <li class="nav-item">
+                @Html.ActionLink("LOGIN", "Index", "Home", new { @class = "nav-link" })
+            </li>
+
         </ul>
     </div>
 </nav>
