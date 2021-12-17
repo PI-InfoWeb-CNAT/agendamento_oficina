@@ -26,6 +26,8 @@ O sistema recebe um novo produto em seu banco de dados.
 
 ### 5. Fluxos de Evento
 
+O usuário mecânico acessa a tela de produtos, e ao clicar em "CADASTRAR NOVO PRODUTO", informa os dados e adiciona o mesmo.
+
 #### 5.1. Fluxo Básico
 
 | Ator   | Sistema |
