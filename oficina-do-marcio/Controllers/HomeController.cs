@@ -8,7 +8,15 @@ namespace oficina_do_marcio.Controllers
 {
     public class HomeController : Controller
     {
+        [Route("")]
+        [Route("Home/Index")]
         public ActionResult Index()
+        {
+            return View("");
+        }
+
+        [Route("Home/Scheduling")]
+        public ActionResult Scheduling()
         {
             return View();
         }
@@ -18,9 +26,9 @@ namespace oficina_do_marcio.Controllers
             return Content("Sobre");
         }
 
-        public ActionResult Contact()
+        public ActionResult Contact() 
         {
-            return Content("Contato");
+            return Content("Contact");
         }
     }
 }

@@ -4,27 +4,16 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - Meu Aplicativo ASP.NET</title>
+    <title>@ViewBag.Title</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
-<body>
-    <div class="navbar navbar-inverse navbar-fixed-top bg-body">
-        <div class="container">
-            <div class="navbar-header">
-                @Html.ActionLink("Oficina do Marcio", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Início", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Sobre", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contato", "Contact", "Home")</li>
-                </ul>
-            </div>
-        </div>
-    </div>
+<body class="p-0 mb-3">
+    @Html.Partial("_Header")
     <div class="container body-content">
         @RenderBody()
         <hr />
-        <footer>
+        <footer class="d-inline-flex align-bottom">
             <p>&copy; @DateTime.Now.Year - Oficina do Marcio</p>
         </footer>
     </div>
