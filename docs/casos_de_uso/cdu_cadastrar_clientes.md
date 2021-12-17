@@ -1,6 +1,6 @@
 # Projeto Agendamento de Serviços
 
-## Especificação do caso de uso - Cadastrar Produtos 
+## Especificação do caso de uso - Cadastrar Clientes 
 
 ### Histórico da Revisão 
 
@@ -25,6 +25,8 @@ O cliente deve acessar o site e não possuir cpf cadastrado na base dados.
 O sistema recebe um novo cliente em seu banco de dados.
 
 ### 5. Fluxos de Evento
+
+O usuário cliente entra na página do site, e ao clicar em LOGIN ou em FAÇA SEU AGENDAMENTO, ele terá a opção de realizar seu cadastro, caso ainda não possua o mesmo.
 
 #### 5.1. Fluxo Básico
 
