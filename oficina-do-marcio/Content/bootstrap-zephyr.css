@@ -64,6 +64,7 @@
     --bs-body-color: #495057;
     --bs-body-bg: #fff;
     --bs-primary-nav: 20, 26, 40;
+    --bs-footer-bg: #7D5B34
 }
 
 *,
@@ -89,6 +90,11 @@ body {
   background-color: var(--bs-body-bg);
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.bg-footer {
+    background-color: var(--bs-footer-bg);
+    color: white;
 }
 
 hr {
