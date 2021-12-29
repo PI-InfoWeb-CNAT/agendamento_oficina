@@ -2,8 +2,14 @@
     ViewBag.Title = "Oficina do Márcio";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<div class="container-custom body-content m-0 p-0">
+<div class="container-fluid body-content m-0 p-0">
+
     <div id="carouselControl" class="carousel slide w-100" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselControl" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselControl" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselControl" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <img src="~/Assets/Group3.png" class=" img-body" alt="First Slide">
@@ -15,16 +21,18 @@
                 <img src="~/Assets/2.png" class="img-body" alt="Third Slide">
             </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselControl" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselControl" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
     </div>
-    
+
+    <div class="container-fluid container-custom p-0">
+        <div class="row h-100 w-100">
+            <div class="justify-content-center align-items-center d-inline-flex bg-custom p-0">
+                <span class="fs-2 text-uppercase">experiência com veículos aspirados, turbo ou 4x4</span>
+            </div>
+        </div>
+    </div>
+
+    <img src="~/Assets/troller.png" class="img-body" />
+
 </div>
 
 

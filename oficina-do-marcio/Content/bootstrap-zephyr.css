@@ -96,22 +96,24 @@ body {
     background-color: #141A28;
 }
 
+.bg-custom {
+    background-color: #141A28;
+    color: white;
+}
+
 .bg-footer {
     background-color: var(--bs-footer-bg);
     color: white;
 }
 
-.img-body {
-    height: 792px;
+.container-custom {
+    width: 1920px;
+    height: 380px;
 }
 
 .img-body-exception {
     width: 1920px;
     height: 792px;
-}
-
-.container-custom {
-
 }
 
 hr {
@@ -720,7 +722,6 @@ progress {
 }
 
 .row {
-  --bs-gutter-x: 1.5rem;
   --bs-gutter-y: 0;
   display: -ms-flexbox;
   display: flex;
