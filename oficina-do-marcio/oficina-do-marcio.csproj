@@ -217,6 +217,7 @@
     <Content Include="Views\Produtos\Index.cshtml" />
     <Content Include="Views\Clientes\Confirm.cshtml" />
     <Content Include="Views\Produtos\Confirm.cshtml" />
+    <Content Include="Views\Shared\_Footer.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
