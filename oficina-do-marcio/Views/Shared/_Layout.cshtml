@@ -8,11 +8,9 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
-<body class="p-0 mb-3">
+<body class="p-0">
     @Html.Partial("_Header")
-    <div class="container body-content">
-        @RenderBody()
-    </div>
+    @RenderBody()
     @Html.Partial("_Footer")
 
 
