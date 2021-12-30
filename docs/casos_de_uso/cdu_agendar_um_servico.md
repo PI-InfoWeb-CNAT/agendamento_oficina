@@ -12,6 +12,10 @@
 
 Nesse caso de uso, o usuário cliente acessa o sistema e realiza um agendamento de serviço, selecionando o dia, hora, possível motivo e opcionalmente uma breve descrição.
 
+### 2. Atores
+
+Cliente
+
 ### 3. Pré-condições
 
 O cliente deve estar cadastrado no sistema e ter efetuado login.
