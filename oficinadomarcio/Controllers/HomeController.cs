@@ -21,6 +21,12 @@ namespace oficinadomarcio.Controllers
             return View();
         }
 
+        [Route("Admin")]
+        public ActionResult Admin()
+        {
+            return View();
+        }
+
         public ActionResult About()
         {
             return Content("Sobre");
