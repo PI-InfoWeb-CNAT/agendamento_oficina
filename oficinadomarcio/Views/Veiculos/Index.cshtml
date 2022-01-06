@@ -1,0 +1,64 @@
+﻿@model IEnumerable<oficinadomarcio.Models.Veiculo>
+
+@{
+    ViewBag.Title = "Veiculos";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-fluid">
+    @Html.ActionLink("NOVO VEICULO", "Create", "Veiculos", null, new { @class = "btn text-white bg-primary my-4", role = "button" })
+    <table id="veiculos" class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Placa)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Marca)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Modelo)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Ano)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td>
+                    @Html.ActionLink(item.Placa, "Details", "Veiculos", new { id = item.Placa }, null)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Marca)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Modelo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ano)
+                </td>
+                <td>
+                    @Html.ActionLink("Editar", "Edit", new { id = item.Placa }) |
+                    @Html.ActionLink("Excluir", "Delete", new { id = item.Placa })
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+@section scripts
+{
+    <script>
+        $(document).ready(function () {
+            $("#veiculos").DataTable();
+            $(".paginate_button").css({
+                "margin": "0 10px"
+            })
+        })
+    </script>
+}
