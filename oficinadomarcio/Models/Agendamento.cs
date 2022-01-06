@@ -16,6 +16,9 @@ namespace oficinadomarcio.Models
         public int Id { get; set; }
 
         [Required]
+        public string Titulo { get; set; }
+
+        [Required]
         [StringLength(1000)]
         public string Descricao { get; set; }
 
@@ -23,6 +26,12 @@ namespace oficinadomarcio.Models
         [DefaultValue("getutcdate()")]
         public DateTime? Data_agendamento { get; set; } = DateTime.Now;
 
+        [DisplayName("Data")]
         public DateTime? Data_servico { get; set; }
+
+        [ForeignKey("Horario")]
+        [HorarioDisponivel]
+        public int HorarioId { get; set; }
+        public Horario Horario { get; set; }
     }
 }

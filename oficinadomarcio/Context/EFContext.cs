@@ -35,5 +35,6 @@ namespace oficinadomarcio.Context
         public DbSet<Agendamento> agendamento { get; set; }
         public DbSet<Produto> produto { get; set; }
         public DbSet<Servico> servico { get; set; }
+        public DbSet<Horario> horario { get; set; }
     }
 }

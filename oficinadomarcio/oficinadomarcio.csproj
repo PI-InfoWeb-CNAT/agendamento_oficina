@@ -171,6 +171,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Context\EFContext.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AgendamentosController.cs" />
     <Compile Include="Controllers\ClientesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -184,10 +185,24 @@
     <Compile Include="Migrations\202201041814503_AddModels.designer.cs">
       <DependentUpon>202201041814503_AddModels.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202201062149396_CorrecaoModelAgendamento.cs" />
+    <Compile Include="Migrations\202201062149396_CorrecaoModelAgendamento.designer.cs">
+      <DependentUpon>202201062149396_CorrecaoModelAgendamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202201062150498_SeedHorario.cs" />
+    <Compile Include="Migrations\202201062150498_SeedHorario.designer.cs">
+      <DependentUpon>202201062150498_SeedHorario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202201062210569_AgendamentoRowAdd.cs" />
+    <Compile Include="Migrations\202201062210569_AgendamentoRowAdd.designer.cs">
+      <DependentUpon>202201062210569_AgendamentoRowAdd.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Agendamento.cs" />
     <Compile Include="Models\Cliente.cs" />
+    <Compile Include="Models\Horario.cs" />
+    <Compile Include="Models\Validators\HorarioDisponível.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Mecanico.cs" />
@@ -656,6 +671,11 @@
     <Content Include="Views\Veiculos\Details.cshtml" />
     <Content Include="Views\Veiculos\Edit.cshtml" />
     <Content Include="Views\Veiculos\Index.cshtml" />
+    <Content Include="Views\Agendamentos\Create.cshtml" />
+    <Content Include="Views\Agendamentos\Delete.cshtml" />
+    <Content Include="Views\Agendamentos\Details.cshtml" />
+    <Content Include="Views\Agendamentos\Edit.cshtml" />
+    <Content Include="Views\Agendamentos\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -676,6 +696,15 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202201041814503_AddModels.resx">
       <DependentUpon>202201041814503_AddModels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202201062149396_CorrecaoModelAgendamento.resx">
+      <DependentUpon>202201062149396_CorrecaoModelAgendamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202201062150498_SeedHorario.resx">
+      <DependentUpon>202201062150498_SeedHorario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202201062210569_AgendamentoRowAdd.resx">
+      <DependentUpon>202201062210569_AgendamentoRowAdd.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

@@ -24,7 +24,7 @@ namespace oficinadomarcio
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap-zephyr.css",
-                      "~/Content/site.css",
+                      "~/Content/Site.css",
                       "~/Content/DataTables/css/dataTables.bootstrap.css"));
         }
     }
