@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<oficinadomarcio.Models.Cliente>
 
 @{
-    ViewBag.Title = "Admin";
+    ViewBag.Title = "Clientes";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -44,7 +44,7 @@
                 {
                     <tr>
                         <td>
-                            @Html.DisplayFor(modelItem => item.Nome)
+                            @Html.ActionLink(item.Nome, "Details", "Clientes", new { id = item.Cpf }, null)
                         </td>
                         <td>
                             @Html.DisplayFor(modelItem => item.Telefone)
@@ -63,7 +63,6 @@
                         </td>
                         <td>
                             @Html.ActionLink("Editar", "Edit", new { id = item.Cpf }) |
-                            @Html.ActionLink("Detalhes", "Details", new { id = item.Cpf }) |
                             @Html.ActionLink("Excluir", "Delete", new { id = item.Cpf })
                         </td>
                     </tr>

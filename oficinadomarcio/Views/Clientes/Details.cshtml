@@ -1,7 +1,8 @@
 ﻿@model oficinadomarcio.Models.Cliente
 
 @{
-    Layout = null;
+    ViewBag.Title = Model.Nome;
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <!DOCTYPE html>
@@ -12,63 +13,63 @@
     <title>Details</title>
 </head>
 <body>
-    <div>
+    <div class="container-fluid m-3 p-3">
         <h4>Cliente</h4>
         <hr />
         <dl class="dl-horizontal">
             <dt>
                 @Html.DisplayNameFor(model => model.Nome)
             </dt>
-    
+
             <dd>
                 @Html.DisplayFor(model => model.Nome)
             </dd>
-    
+
             <dt>
                 @Html.DisplayNameFor(model => model.Telefone)
             </dt>
-    
+
             <dd>
                 @Html.DisplayFor(model => model.Telefone)
             </dd>
-    
+
             <dt>
                 @Html.DisplayNameFor(model => model.Email)
             </dt>
-    
+
             <dd>
                 @Html.DisplayFor(model => model.Email)
             </dd>
-    
+
             <dt>
                 @Html.DisplayNameFor(model => model.Senha)
             </dt>
-    
+
             <dd>
                 @Html.DisplayFor(model => model.Senha)
             </dd>
-    
+
             <dt>
                 @Html.DisplayNameFor(model => model.Endereco)
             </dt>
-    
+
             <dd>
                 @Html.DisplayFor(model => model.Endereco)
             </dd>
-    
+
             <dt>
                 @Html.DisplayNameFor(model => model.Data_cadastro)
             </dt>
-    
+
             <dd>
                 @Html.DisplayFor(model => model.Data_cadastro)
             </dd>
-    
+
         </dl>
+        <p>
+            @Html.ActionLink("Editar", "Edit", new { id = Model.Cpf }) |
+            @Html.ActionLink("Voltar a lista", "Index")
+        </p>
     </div>
-    <p>
-        @Html.ActionLink("Editar", "Edit", new { id = Model.Cpf }) |
-        @Html.ActionLink("Voltar a lista", "Index")
-    </p>
 </body>
 </html>

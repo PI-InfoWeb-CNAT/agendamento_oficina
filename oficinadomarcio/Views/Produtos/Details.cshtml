@@ -1,7 +1,8 @@
 ﻿@model oficinadomarcio.Models.Produto
 
 @{
-    Layout = null;
+    ViewBag.Title = Model.Descricao;
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <!DOCTYPE html>
@@ -12,47 +13,47 @@
     <title>Details</title>
 </head>
 <body>
-    <div>
+    <div class="container-fluid m-3 p-3">
         <h4>Produto</h4>
         <hr />
         <dl class="dl-horizontal">
             <dt>
                 @Html.DisplayNameFor(model => model.Marca)
             </dt>
-    
+
             <dd>
                 @Html.DisplayFor(model => model.Marca)
             </dd>
-    
+
             <dt>
                 @Html.DisplayNameFor(model => model.Descricao)
             </dt>
-    
+
             <dd>
                 @Html.DisplayFor(model => model.Descricao)
             </dd>
-    
+
             <dt>
                 @Html.DisplayNameFor(model => model.Categoria)
             </dt>
-    
+
             <dd>
                 @Html.DisplayFor(model => model.Categoria)
             </dd>
-    
+
             <dt>
                 @Html.DisplayNameFor(model => model.Quantidade)
             </dt>
-    
+
             <dd>
                 @Html.DisplayFor(model => model.Quantidade)
             </dd>
-    
+
         </dl>
+        <p>
+            @Html.ActionLink("Editar", "Edit", new { id = Model.Id }) |
+            @Html.ActionLink("Voltar a lista", "Index")
+        </p>
     </div>
-    <p>
-        @Html.ActionLink("Editar", "Edit", new { id = Model.Id }) |
-        @Html.ActionLink("Voltar a lista", "Index")
-    </p>
 </body>
 </html>
