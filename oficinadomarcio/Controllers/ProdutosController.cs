@@ -16,14 +16,14 @@ namespace oficinadomarcio.Controllers
         private EFContext db = new EFContext();
 
         // GET: Produtos
-        [Route("Produtos/Admin")]
+        [Route("Admin/Produtos")]
         public ActionResult Index()
         {
             return View(db.produto.ToList());
         }
 
         // GET: Produtos/Details/5
-        [Route("Produtos/Admin/Details/{id}")]
+        [Route("Admin/Produtos/Details/{id}")]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -39,14 +39,14 @@ namespace oficinadomarcio.Controllers
         }
 
         // GET: Produtos/Create
-        [Route("Produtos/Create")]
+        [Route("Admin/Produtos/Create")]
         public ActionResult Create()
         {
             return View();
         }
 
         // POST: Produtos/Create
-        [Route("Produtos/Create")]
+        [Route("Admin/Produtos/Create")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,Marca,Descricao,Categoria,Quantidade")] Produto produto)
@@ -61,14 +61,14 @@ namespace oficinadomarcio.Controllers
             return View(produto);
         }
 
-        [Route("Produtos/Confirm")]
+        [Route("Admin/Produtos/Confirm")]
         public ActionResult Confirm()
         {
             return View();
         }
 
         // GET: Produtos/Edit/5
-        [Route("Produtos/Admin/Edit/{id}")]
+        [Route("Admin/Produtos/Edit/{id}")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -84,7 +84,7 @@ namespace oficinadomarcio.Controllers
         }
 
         // POST: Produtos/Edit/5
-        [Route("Produtos/Admin/Edit/{id}")]
+        [Route("Admin/Produtos/Edit/{id}")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "Id,Marca,Descricao,Categoria,Quantidade")] Produto produto)
@@ -99,7 +99,7 @@ namespace oficinadomarcio.Controllers
         }
 
         // GET: Produtos/Delete/5
-        [Route("Produtos/Admin/Delete/{id}")]
+        [Route("Admin/Produtos/Delete/{id}")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -115,7 +115,7 @@ namespace oficinadomarcio.Controllers
         }
 
         // POST: Produtos/Delete/5
-        [Route("Produtos/Admin/Delete/{id}")]
+        [Route("Admin/Produtos/Delete/{id}")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

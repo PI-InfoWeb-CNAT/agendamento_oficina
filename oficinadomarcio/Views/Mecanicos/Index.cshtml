@@ -1,0 +1,72 @@
+﻿@model IEnumerable<oficinadomarcio.Models.Mecanico>
+
+@{
+    ViewBag.Title = "Mecanicos";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-fluid">
+    <p>
+        @Html.ActionLink("NOVO MECANICO", "Create", "Mecanicos", null, new { @class = "btn text-white bg-primary my-4", role = "button" })
+    </p>
+    <table id="mecanicos" class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Nome)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Cpf)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Senha)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Telefone)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Admin)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.ActionLink(item.Nome, "Details", "Mecanicos", new { id = item.Cpf }, null)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Cpf)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Senha)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Telefone)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Admin)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Editar", "Edit", new { id = item.Cpf }) |
+                        @Html.ActionLink("Excluir", "Delete", new { id = item.Cpf })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+@section scripts
+{
+    <script>
+        $(document).ready(function () {
+            $("#mecanicos").DataTable();
+            $(".paginate_button").css({
+                "margin": "0 10px"
+            })
+        })
+    </script>    
+}
