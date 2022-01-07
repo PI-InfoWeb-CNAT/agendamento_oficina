@@ -1,7 +1,7 @@
 ﻿@model oficinadomarcio.Models.Agendamento
 
 @{
-    ViewBag.Title = "Fazer agendamento";
+    ViewBag.Title = "Novo agendamento";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -34,7 +34,7 @@
                 @Html.LabelFor(model => model.Data_servico, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
                     <input type="date" name="Data_servico" id="data_servico" class="form-control" />
-                    @Html.ValidationMessageFor(model => model.Data_servico, "", new { @class = "text-danger" })
+                    @Html.ValidationMessageFor(model => model.Data_servico, "", new { @class = "text-danger", id = "custom-validator" })
                 </div>
             </div>
 
@@ -54,3 +54,14 @@
         </div>
     }
 </div>
+
+@section scripts
+{
+    <script>
+        $(document).ready(function () {
+            if ($('#custom-validator').hasClass('field-validation-error')) {
+                $('#data_servico').addClass('input-validation-error')
+            }
+        })
+    </script>    
+}

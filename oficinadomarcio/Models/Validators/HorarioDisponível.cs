@@ -17,7 +17,11 @@ namespace oficinadomarcio.Models
         }
         protected override ValidationResult IsValid(object value, ValidationContext validationContext) //pick the second one when type override IsValid
         {
-            var agendamento = (Agendamento) validationContext.ObjectInstance;
+            var agendamento = (Agendamento) validationContext.ObjectInstance ?? null;
+
+            if (agendamento.Data_servico == null || agendamento.Data_servico == DateTime.MinValue) 
+                agendamento.Data_servico = DateTime.MinValue;
+
             var agendamentos = db.agendamento.ToList().Where(a => a.Data_servico.Value.Date == agendamento.Data_servico.Value.Date);
 
             bool existe = false;
@@ -27,12 +31,8 @@ namespace oficinadomarcio.Models
                 if (ag.HorarioId == agendamento.HorarioId) existe = true;
             }
 
-            if (existe)
-            {
-                return new ValidationResult("Horário não disponível");
-            }
-
             return existe ? new ValidationResult("Horário não disponível") : ValidationResult.Success;
         }
     }
 }
+

@@ -1,6 +1,9 @@
 ﻿@{
+    ViewBag.Title = "Confirmação"
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Produto cadastrado! Obrigado!</h1>
-@Html.ActionLink("Voltar ao início", "Index", "Home")
+<div class="container-fluid p-3 m-3">
+    <h1 class="w-100 text-center">Produto cadastrado! Obrigado!</h1>
+    @Html.ActionLink("Voltar ao início", "Index", "Home")
+</div>

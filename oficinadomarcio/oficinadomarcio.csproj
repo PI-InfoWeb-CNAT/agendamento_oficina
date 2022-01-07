@@ -197,6 +197,10 @@
     <Compile Include="Migrations\202201062210569_AgendamentoRowAdd.designer.cs">
       <DependentUpon>202201062210569_AgendamentoRowAdd.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202201062342294_AgendamentoRowCorrection.cs" />
+    <Compile Include="Migrations\202201062342294_AgendamentoRowCorrection.designer.cs">
+      <DependentUpon>202201062342294_AgendamentoRowCorrection.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Agendamento.cs" />
@@ -705,6 +709,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202201062210569_AgendamentoRowAdd.resx">
       <DependentUpon>202201062210569_AgendamentoRowAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202201062342294_AgendamentoRowCorrection.resx">
+      <DependentUpon>202201062342294_AgendamentoRowCorrection.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

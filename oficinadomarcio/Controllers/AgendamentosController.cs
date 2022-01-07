@@ -16,6 +16,7 @@ namespace oficinadomarcio.Controllers
         private EFContext db = new EFContext();
 
         // GET: Agendamentos
+        [Route("Admin/Agendamentos")]
         public ActionResult Index()
         {
             var agendamento = db.agendamento.Include(a => a.Horario);
@@ -23,6 +24,7 @@ namespace oficinadomarcio.Controllers
         }
 
         // GET: Agendamentos/Details/5
+        [Route("Admin/Agendamentos/Details/{id}")]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -38,6 +40,7 @@ namespace oficinadomarcio.Controllers
         }
 
         // GET: Agendamentos/Create
+        [Route("Agendamentos/Create")]
         public ActionResult Create()
         {
             ViewBag.HorarioId = new SelectList(db.horario, "Id", "Hora");
@@ -49,8 +52,15 @@ namespace oficinadomarcio.Controllers
         // Para obter mais detalhes, confira https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Route("Agendamentos/Create")]
         public ActionResult Create([Bind(Include = "Id,Titulo,Descricao,Data_agendamento,Data_servico,HorarioId")] Agendamento agendamento)
         {
+            if (agendamento.Data_servico == null)
+            {
+                ViewBag.HorarioId = new SelectList(db.horario, "Id", "Hora", agendamento.HorarioId);
+                return View(agendamento);
+            }
+
             if (ModelState.IsValid)
             {
                 var horario = db.horario.SingleOrDefault(h => h.Id == agendamento.HorarioId);
@@ -67,6 +77,7 @@ namespace oficinadomarcio.Controllers
         }
 
         // GET: Agendamentos/Edit/5
+        [Route("Admin/Agendamentos/Edit/{id}")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -87,6 +98,7 @@ namespace oficinadomarcio.Controllers
         // Para obter mais detalhes, confira https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Route("Admin/Agendamentos/Edit/{id}")]
         public ActionResult Edit([Bind(Include = "Id,Titulo,Descricao,Data_agendamento,Data_servico,HorarioId")] Agendamento agendamento)
         {
             if (ModelState.IsValid)
@@ -100,6 +112,7 @@ namespace oficinadomarcio.Controllers
         }
 
         // GET: Agendamentos/Delete/5
+        [Route("Admin/Agendamentos/Delete/{id}")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -115,6 +128,7 @@ namespace oficinadomarcio.Controllers
         }
 
         // POST: Agendamentos/Delete/5
+        [Route("Admin/Agendamentos/Delete/{id}")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

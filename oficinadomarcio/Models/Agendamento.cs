@@ -27,11 +27,17 @@ namespace oficinadomarcio.Models
         public DateTime? Data_agendamento { get; set; } = DateTime.Now;
 
         [DisplayName("Data")]
+        [Required(ErrorMessage = "Uma data deve ser inserida")]
         public DateTime? Data_servico { get; set; }
 
         [ForeignKey("Horario")]
         [HorarioDisponivel]
         public int HorarioId { get; set; }
         public Horario Horario { get; set; }
+
+        public Agendamento()
+        {
+            this.Data_agendamento = DateTime.UtcNow;
+        }
     }
 }

@@ -1,13 +1,12 @@
 ﻿@model oficinadomarcio.Models.Agendamento
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Agendamento";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Details</h2>
 
-<div>
+<div class="container-fluid m-3 p-3">
     <h4>Agendamento</h4>
     <hr />
     <dl class="dl-horizontal">
@@ -52,8 +51,9 @@
         </dd>
 
     </dl>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+        @Html.ActionLink("Voltar a lista", "Index")
+    </p>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+
