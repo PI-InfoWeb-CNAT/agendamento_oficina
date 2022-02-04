@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewBag.Title = "Admin";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="jumbotron p-4 my-1 mx-4">
+    <h1 class="display-4">Olá Admin!</h1>
+    <p class="lead">Selecione qual área você deseja gerenciar!</p>
+</div>
+
+<div class="p-4 myt-1 mb-5 mx-5 list-group bg-custom">
+    @Html.ActionLink("Clientes", "Index", "Clientes", null, new { @class = "list-group-item" })
+    @Html.ActionLink("Mecanicos", "Index", "Mecanicos", null, new { @class = "list-group-item" })
+    @Html.ActionLink("Produtos", "Index", "Produtos", null, new { @class = "list-group-item" })
+    @Html.ActionLink("Veiculos", "Index", "Veiculos", null, new { @class = "list-group-item" })
+    @Html.ActionLink("Agendamentos", "Index", "Agendamentos", null, new { @class = "list-group-item" })
+</div>
