@@ -22,22 +22,21 @@ namespace oficinadomarcio.Models
         [StringLength(1000)]
         public string Descricao { get; set; }
 
-        [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
-        [DefaultValue("getutcdate()")]
-        public DateTime? Data_agendamento { get; set; } = DateTime.Now;
-
-        [DisplayName("Data")]
-        [Required(ErrorMessage = "Uma data deve ser inserida")]
-        public DateTime? Data_servico { get; set; }
+        //[DatabaseGenerated(DatabaseGeneratedOption.Computed)]
+        public DateTime Data_agendamento { get; set; }
 
         [ForeignKey("Horario")]
-        [HorarioDisponivel]
         public int HorarioId { get; set; }
         public Horario Horario { get; set; }
 
-        public Agendamento()
-        {
-            this.Data_agendamento = DateTime.UtcNow;
-        }
+        // Vincular o agendamento ao cliente
+        [ForeignKey("Cliente")]
+        public string CpfCliente { get; set; }
+        public Cliente Cliente { get; set; }
+
+        // Vincular o agendamento ao veículo 
+        [ForeignKey("Veiculo")]
+        public string PlacaVeiculo { get; set; }
+        public Veiculo Veiculo { get; set; }
     }
 }

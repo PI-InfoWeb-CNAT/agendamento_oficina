@@ -19,10 +19,10 @@ namespace oficinadomarcio.Models
         {
             var agendamento = (Agendamento) validationContext.ObjectInstance ?? null;
 
-            if (agendamento.Data_servico == null || agendamento.Data_servico == DateTime.MinValue) 
-                agendamento.Data_servico = DateTime.MinValue;
+            if (agendamento.Data_agendamento == null || agendamento.Data_agendamento == DateTime.MinValue) 
+                agendamento.Data_agendamento = DateTime.MinValue;
 
-            var agendamentos = db.agendamento.ToList().Where(a => a.Data_servico.Value.Date == agendamento.Data_servico.Value.Date);
+            var agendamentos = db.agendamento.ToList().Where(a => a.Data_agendamento.Date == agendamento.Data_agendamento.Date);
 
             bool existe = false;
 

@@ -2,26 +2,29 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace oficinadomarcio.Models
 {
-    [Table("Servicos")]
-    public class Servico
+    public class ServicoItem
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
-        [Required]
-        [MaxLength(100)]
-        public string Descricao { get; set; }
+        // Vincular o Item ao Agendamento
+        [ForeignKey("Agendamento")]
+        public int IdAgendamento { get; set; }
+        public Agendamento Agendamento { get; set; }
+
+        // Vincular o Item ao Serviço
+        [ForeignKey("Servico")]
+        public int IdServico { get; set; }
+        public Servico Servico { get; set; }
 
         [Required]
-        [MaxLength(30)]
-        public string Categoria { get; set; }
+        public int Quantidade { get; set; }
 
         [Required]
         public double Preco { get; set; }

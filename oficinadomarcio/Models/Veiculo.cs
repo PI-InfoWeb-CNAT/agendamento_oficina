@@ -10,20 +10,25 @@ namespace oficinadomarcio.Models
     [Table("Veiculos")]
     public class Veiculo
     {
-        [Key] 
+        [Key]
         [MaxLength(7)]
         public string Placa { get; set; }
 
         [Required]
-        [MaxLength(20)] 
+        [MaxLength(20)]
         public string Marca { get; set; }
 
         [Required]
-        [MaxLength(100)] 
+        [MaxLength(100)]
         public string Modelo { get; set; }
 
         [Required]
         [Range(0, 2050)]
         public int Ano { get; set; }
+
+        // Vincular o veículo ao cliente
+        [ForeignKey("Cliente")]
+        public string CpfCliente { get; set; }
+        public Cliente Cliente { get; set; }
     }
 }
