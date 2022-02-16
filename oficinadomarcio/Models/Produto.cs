@@ -15,12 +15,12 @@ namespace oficinadomarcio.Models
         public int Id { get; set; }
 
         [Required]
-        [MaxLength(50)]
-        public string Marca { get; set; }
+        [MaxLength(100)]
+        public string Descricao { get; set; }
 
         [Required]
-        [MaxLength(1000)]
-        public string Descricao { get; set; }
+        [MaxLength(50)]
+        public string Marca { get; set; }
 
         [Required]
         [MaxLength(30)]
@@ -28,5 +28,8 @@ namespace oficinadomarcio.Models
 
         [Required]
         public int Quantidade { get; set; }
+
+        [Required]
+        public double Preco { get; set; }
     }
 }

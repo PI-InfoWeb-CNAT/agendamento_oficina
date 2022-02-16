@@ -16,21 +16,35 @@ namespace oficinadomarcio.Controllers
         private EFContext db = new EFContext();
 
         // GET: Clientes
-        [Route("Admin/Clientes")]
         public ActionResult Index()
         {
             return View(db.cliente.ToList());
         }
 
+        // GET: Clientes/Details/5
+        public ActionResult Details(string id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Cliente cliente = db.cliente.Find(id);
+            if (cliente == null)
+            {
+                return HttpNotFound();
+            }
+            return View(cliente);
+        }
+
         // GET: Clientes/Create
-        [Route("Admin/Clientes/Create")]
         public ActionResult Create()
         {
             return View();
         }
 
         // POST: Clientes/Create
-        [Route("Admin/Clientes/Create")]
+        // Para proteger-se contra ataques de excesso de postagem, ative as propriedades específicas às quais deseja se associar. 
+        // Para obter mais detalhes, confira https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Cpf,Nome,Telefone,Email,Senha,Endereco")] Cliente cliente)
@@ -39,57 +53,30 @@ namespace oficinadomarcio.Controllers
             {
                 db.cliente.Add(cliente);
                 db.SaveChanges();
-                return RedirectToAction("Confirm");
+                return RedirectToAction("Index");
             }
 
-            return View(cliente);
-        }
-
-        [Route("Admin/Clientes/Confirm")]
-        public ActionResult Confirm()
-        {
-            return View();
-        }
-
-        // GET: Clientes/Details/5
-        [Route("Admin/Clientes/Details/{id}")]
-        public ActionResult Details(string id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-
-            Cliente cliente = db.cliente.Find(id);
-
-            if (cliente == null)
-            {
-                return HttpNotFound();
-            }
             return View(cliente);
         }
 
         // GET: Clientes/Edit/5
-        [Route("Admin/Clientes/Edit/{id}")]
         public ActionResult Edit(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-
             Cliente cliente = db.cliente.Find(id);
-
             if (cliente == null)
             {
                 return HttpNotFound();
             }
-
             return View(cliente);
         }
 
         // POST: Clientes/Edit/5
-        [Route("Admin/Clientes/Edit/{id}")]
+        // Para proteger-se contra ataques de excesso de postagem, ative as propriedades específicas às quais deseja se associar. 
+        // Para obter mais detalhes, confira https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "Cpf,Nome,Telefone,Email,Senha,Endereco")] Cliente cliente)
@@ -104,7 +91,6 @@ namespace oficinadomarcio.Controllers
         }
 
         // GET: Clientes/Delete/5
-        [Route("Admin/Clientes/Delete/{id}")]
         public ActionResult Delete(string id)
         {
             if (id == null)
@@ -120,7 +106,6 @@ namespace oficinadomarcio.Controllers
         }
 
         // POST: Clientes/Delete/5
-        [Route("Admin/Clientes/Delete/{id}")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(string id)

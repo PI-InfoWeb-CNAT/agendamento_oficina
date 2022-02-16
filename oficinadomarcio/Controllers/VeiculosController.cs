@@ -16,21 +16,20 @@ namespace oficinadomarcio.Controllers
         private EFContext db = new EFContext();
 
         // GET: Veiculos
-        [Route("Admin/Veiculos")]
         public ActionResult Index()
         {
-            return View(db.veiculo.ToList());
+            var veiculo = db.veiculo.Include(v => v.Cliente);
+            return View(veiculo.ToList());
         }
 
         // GET: Veiculos/Details/5
-        [Route("Admin/Veiculos/Details/{id}")]
         public ActionResult Details(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Veiculo veiculo = db.veiculo.Find(id);
+            Veiculo veiculo = db.veiculo.Include(v => v.Cliente).SingleOrDefault(v => v.Placa == id);
             if (veiculo == null)
             {
                 return HttpNotFound();
@@ -39,9 +38,9 @@ namespace oficinadomarcio.Controllers
         }
 
         // GET: Veiculos/Create
-        [Route("Admin/Veiculos/Create")]
         public ActionResult Create()
         {
+            ViewBag.CpfCliente = new SelectList(db.cliente, "Cpf", "Nome");
             return View();
         }
 
@@ -50,8 +49,7 @@ namespace oficinadomarcio.Controllers
         // Para obter mais detalhes, confira https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Route("Admin/Veiculos/Create")]
-        public ActionResult Create([Bind(Include = "Placa,Marca,Modelo,Ano")] Veiculo veiculo)
+        public ActionResult Create([Bind(Include = "Placa,Marca,Modelo,Ano,CpfCliente")] Veiculo veiculo)
         {
             if (ModelState.IsValid)
             {
@@ -60,11 +58,11 @@ namespace oficinadomarcio.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.CpfCliente = new SelectList(db.cliente, "Cpf", "Nome", veiculo.CpfCliente);
             return View(veiculo);
         }
 
         // GET: Veiculos/Edit/5
-        [Route("Admin/Veiculos/Edit/{id}")]
         public ActionResult Edit(string id)
         {
             if (id == null)
@@ -76,6 +74,7 @@ namespace oficinadomarcio.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.CpfCliente = new SelectList(db.cliente, "Cpf", "Nome", veiculo.CpfCliente);
             return View(veiculo);
         }
 
@@ -84,8 +83,7 @@ namespace oficinadomarcio.Controllers
         // Para obter mais detalhes, confira https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Route("Admin/Veiculos/Edit/{id}")]
-        public ActionResult Edit([Bind(Include = "Placa,Marca,Modelo,Ano")] Veiculo veiculo)
+        public ActionResult Edit([Bind(Include = "Placa,Marca,Modelo,Ano,CpfCliente")] Veiculo veiculo)
         {
             if (ModelState.IsValid)
             {
@@ -93,11 +91,11 @@ namespace oficinadomarcio.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.CpfCliente = new SelectList(db.cliente, "Cpf", "Nome", veiculo.CpfCliente);
             return View(veiculo);
         }
 
         // GET: Veiculos/Delete/5
-        [Route("Admin/Veiculos/Delete/{id}")]
         public ActionResult Delete(string id)
         {
             if (id == null)
@@ -115,7 +113,6 @@ namespace oficinadomarcio.Controllers
         // POST: Veiculos/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        [Route("Admin/Veiculos/Delete/{id}")]
         public ActionResult DeleteConfirmed(string id)
         {
             Veiculo veiculo = db.veiculo.Find(id);

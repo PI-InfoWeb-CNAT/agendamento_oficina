@@ -11,7 +11,7 @@ namespace oficinadomarcio.Models
     [Table("Clientes")]
     public class Cliente
     {
-        [Key] 
+        [Key]
         [StringLength(11)]
         public string Cpf { get; set; }
 
@@ -33,13 +33,5 @@ namespace oficinadomarcio.Models
 
         [MaxLength(255)]
         public string Endereco { get; set; }
-
-        [DefaultValue("getutcdate()")]
-        public DateTime? Data_cadastro { get; set; } = DateTime.Now;
-
-        public Cliente()
-        {
-            this.Data_cadastro = DateTime.UtcNow;
-        }
     }
 }

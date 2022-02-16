@@ -16,14 +16,12 @@ namespace oficinadomarcio.Controllers
         private EFContext db = new EFContext();
 
         // GET: Mecanicos
-        [Route("Admin/Mecanicos")]
         public ActionResult Index()
         {
             return View(db.mecanico.ToList());
         }
 
         // GET: Mecanicos/Details/5
-        [Route("Admin/Mecanicos/Details/{id}")]
         public ActionResult Details(string id)
         {
             if (id == null)
@@ -39,7 +37,6 @@ namespace oficinadomarcio.Controllers
         }
 
         // GET: Mecanicos/Create
-        [Route("Admin/Mecanicos/Create")]
         public ActionResult Create()
         {
             return View();
@@ -48,10 +45,9 @@ namespace oficinadomarcio.Controllers
         // POST: Mecanicos/Create
         // Para proteger-se contra ataques de excesso de postagem, ative as propriedades específicas às quais deseja se associar. 
         // Para obter mais detalhes, confira https://go.microsoft.com/fwlink/?LinkId=317598.
-        [Route("Admin/Mecanicos/Create")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Cpf,Admin,Senha,Nome,Telefone,Data_cadastro")] Mecanico mecanico)
+        public ActionResult Create([Bind(Include = "Cpf,Nome,Telefone,Email,Senha")] Mecanico mecanico)
         {
             if (ModelState.IsValid)
             {
@@ -64,7 +60,6 @@ namespace oficinadomarcio.Controllers
         }
 
         // GET: Mecanicos/Edit/5
-        [Route("Admin/Mecanicos/Edit/{id}")]
         public ActionResult Edit(string id)
         {
             if (id == null)
@@ -82,10 +77,9 @@ namespace oficinadomarcio.Controllers
         // POST: Mecanicos/Edit/5
         // Para proteger-se contra ataques de excesso de postagem, ative as propriedades específicas às quais deseja se associar. 
         // Para obter mais detalhes, confira https://go.microsoft.com/fwlink/?LinkId=317598.
-        [Route("Admin/Mecanicos/Edit/{id}")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Cpf,Admin,Senha,Nome,Telefone,Data_cadastro")] Mecanico mecanico)
+        public ActionResult Edit([Bind(Include = "Cpf,Nome,Telefone,Email,Senha")] Mecanico mecanico)
         {
             if (ModelState.IsValid)
             {
@@ -97,7 +91,6 @@ namespace oficinadomarcio.Controllers
         }
 
         // GET: Mecanicos/Delete/5
-        [Route("Admin/Mecanicos/Delete/{id}")]
         public ActionResult Delete(string id)
         {
             if (id == null)
@@ -113,7 +106,6 @@ namespace oficinadomarcio.Controllers
         }
 
         // POST: Mecanicos/Delete/5
-        [Route("Admin/Mecanicos/Delete/{id}")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(string id)

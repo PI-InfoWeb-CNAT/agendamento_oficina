@@ -13,27 +13,24 @@ namespace oficinadomarcio.Models
     [Table("Mecanicos")]
     public class Mecanico
     {
-        [Key] 
+        [Key]
         [StringLength(11)]
         public string Cpf { get; set; }
 
         [Required]
-        [DefaultValue(false)]
-        public bool Admin { get; set; }
-
-        [Required]
-        [MaxLength(255)]
-        public string Senha { get; set; }
-
-        [Required] 
-        [MaxLength(50)]
+        [MaxLength(100)]
         public string Nome { get; set; }
 
         [MaxLength(15)]
         public string Telefone { get; set; }
 
-        [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
-        [DefaultValue("getutcdate()")]
-        public DateTime? Data_cadastro { get; set; } = DateTime.Now;
+        [Required]
+        [MaxLength(100)]
+        [Index]
+        public string Email { get; set; }
+
+        [Required]
+        [MaxLength(255)]
+        public string Senha { get; set; }
     }
 }

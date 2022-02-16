@@ -173,7 +173,6 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Context\EFContext.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\AgendamentosController.cs" />
     <Compile Include="Controllers\ClientesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -203,11 +202,17 @@
     <Compile Include="Migrations\202201062342294_AgendamentoRowCorrection.designer.cs">
       <DependentUpon>202201062342294_AgendamentoRowCorrection.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202202151542394_TablesTotalRefactor.cs" />
+    <Compile Include="Migrations\202202151542394_TablesTotalRefactor.designer.cs">
+      <DependentUpon>202202151542394_TablesTotalRefactor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Agendamento.cs" />
     <Compile Include="Models\Cliente.cs" />
     <Compile Include="Models\Horario.cs" />
+    <Compile Include="Models\ProdutoItem.cs" />
+    <Compile Include="Models\ServicoItem.cs" />
     <Compile Include="Models\Validators\HorarioDisponível.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -639,18 +644,6 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Clientes\Confirm.cshtml" />
-    <Content Include="Views\Clientes\Create.cshtml" />
-    <Content Include="Views\Clientes\Delete.cshtml" />
-    <Content Include="Views\Clientes\Details.cshtml" />
-    <Content Include="Views\Clientes\Edit.cshtml" />
-    <Content Include="Views\Clientes\Index.cshtml" />
-    <Content Include="Views\Produtos\Confirm.cshtml" />
-    <Content Include="Views\Produtos\Create.cshtml" />
-    <Content Include="Views\Produtos\Delete.cshtml" />
-    <Content Include="Views\Produtos\Details.cshtml" />
-    <Content Include="Views\Produtos\Edit.cshtml" />
-    <Content Include="Views\Produtos\Index.cshtml" />
     <Content Include="Views\Shared\_Footer.cshtml" />
     <Content Include="Views\Shared\_Header.cshtml" />
     <Content Include="Views\Home\Admin.cshtml" />
@@ -664,6 +657,16 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Views\Clientes\Create.cshtml" />
+    <Content Include="Views\Clientes\Delete.cshtml" />
+    <Content Include="Views\Clientes\Details.cshtml" />
+    <Content Include="Views\Clientes\Edit.cshtml" />
+    <Content Include="Views\Clientes\Index.cshtml" />
+    <Content Include="Views\Produtos\Create.cshtml" />
+    <Content Include="Views\Produtos\Delete.cshtml" />
+    <Content Include="Views\Produtos\Details.cshtml" />
+    <Content Include="Views\Produtos\Edit.cshtml" />
+    <Content Include="Views\Produtos\Index.cshtml" />
     <Content Include="Views\Mecanicos\Create.cshtml" />
     <Content Include="Views\Mecanicos\Delete.cshtml" />
     <Content Include="Views\Mecanicos\Details.cshtml" />
@@ -674,11 +677,6 @@
     <Content Include="Views\Veiculos\Details.cshtml" />
     <Content Include="Views\Veiculos\Edit.cshtml" />
     <Content Include="Views\Veiculos\Index.cshtml" />
-    <Content Include="Views\Agendamentos\Create.cshtml" />
-    <Content Include="Views\Agendamentos\Delete.cshtml" />
-    <Content Include="Views\Agendamentos\Details.cshtml" />
-    <Content Include="Views\Agendamentos\Edit.cshtml" />
-    <Content Include="Views\Agendamentos\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -707,6 +705,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202201062342294_AgendamentoRowCorrection.resx">
       <DependentUpon>202201062342294_AgendamentoRowCorrection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202202151542394_TablesTotalRefactor.resx">
+      <DependentUpon>202202151542394_TablesTotalRefactor.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
