@@ -3,34 +3,33 @@
     ViewBag.Title = "Cadastre-se";
 }
 
-<div class=" d-flex align-self-center my-auto p-5 border border-custom w-25">
+<h2 class="text-white d-flex justify-content-center mt-5">@ViewBag.Title</h2>
 
-    @using (Html.BeginForm("Cadastre-se", "Account", FormMethod.Post, new { @class = "m-auto", role = "form" }))
-    {
-        @Html.AntiForgeryToken()
+@using (Html.BeginForm("Cadastre-se", "Account", FormMethod.Post, new { @class = "m-auto d-flex flex-column p-4", role = "form" }))
+{
+    @Html.AntiForgeryToken()
 
-        <div class="col-md-12 my-4">
-            @Html.LabelFor(m => m.Email, new { @class = "control-label bg-custom" })
-            @Html.TextBoxFor(m => m.Email, new { @class = "form-control bg-transparent border-custom" })
-        </div>
-        <div class="col-md-12 my-4">
-            @Html.LabelFor(m => m.Password, new { @class = "control-label" })
-            @Html.PasswordFor(m => m.Password, new { @class = "form-control bg-transparent border-custom" })
-        </div>
-        <div class="col-md-12 my-4">
-            @Html.LabelFor(m => m.ConfirmPassword, new { @class = "control-label" })
-            @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control bg-transparent border border-custom" })
-        </div>
-        @Html.ValidationSummary("", new { @class = "text-danger" })
+    <div class="my-4">
+        @Html.LabelFor(m => m.Email, new { @class = "form-label" })
+        @Html.TextBoxFor(m => m.Email, new { @class = "form-control bg-transparent border-custom" })
+    </div>
 
-        <div class="col-md-12 m-auto">
-            <input type="submit" class="btn btn-default bg-custom-yellow text-white" value="Registrar" />
-        </div>
-    }
+    <div class="my-4">
+        @Html.LabelFor(m => m.Password, new { @class = "form-label" })
+        @Html.PasswordFor(m => m.Password, new { @class = "form-control bg-transparent border-custom" })
 
-</div>
+    </div>
+    <div class="my-4">
+        @Html.LabelFor(m => m.ConfirmPassword, new { @class = "form-label" })
+        @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control bg-transparent border-custom" })
+    </div>
 
+    @Html.ValidationSummary("", new { @class = "text-white" })
 
+    <div class="col-md-12 m-auto">
+        <input type="submit" class="btn btn-default bg-custom-yellow text-white" value="Registrar" />
+    </div>
+}
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
