@@ -1,31 +1,33 @@
-﻿@model oficinadomarcio.Models.RegisterViewModel
+﻿    @model oficinadomarcio.Models.RegisterViewModel
 @{
     ViewBag.Title = "Cadastre-se";
 }
 
-<h2 class="text-white m-auto">@ViewBag.Title.</h2>
+<h2 class="text-white d-flex justify-content-center my-5">@ViewBag.Title</h2>
 
-@using (Html.BeginForm("Cadastre-se", "Account", FormMethod.Post, new { @class = "row g-3 m-auto", role = "form" }))
+@using (Html.BeginForm("Cadastre-se", "Account", FormMethod.Post, new { @class = "m-auto d-flex flex-column p-4", role = "form" }))
 {
     @Html.AntiForgeryToken()
-    
-    @Html.ValidationSummary("", new { @class = "text-danger" })
-    <div class="col-md-12">
-        @Html.LabelFor(m => m.Email, new { @class = "control-label bg-custom" })
-        @Html.TextBoxFor(m => m.Email, new { @class = "form-control bg-transparent border-warning" })
+
+    <div class="my-4">
+        @Html.LabelFor(m => m.Email, new { @class = "form-label" })
+        @Html.TextBoxFor(m => m.Email, new { @class = "form-control bg-transparent border-custom" })
     </div>
-    <div class="col-md-6">
-        @Html.LabelFor(m => m.Password, new { @class = "control-label" })
-        @Html.PasswordFor(m => m.Password, new { @class = "form-control bg-transparent border-warning " })
+
+    <div class="my-4">
+        @Html.LabelFor(m => m.Password, new { @class = "form-label" })
+        @Html.PasswordFor(m => m.Password, new { @class = "form-control bg-transparent border-custom" })
+
     </div>
-    <div class="col-md-6">
-        @Html.LabelFor(m => m.ConfirmPassword, new { @class = "control-label" })
-        @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control bg-transparent border border-warning" })
+    <div class="my-4">
+        @Html.LabelFor(m => m.ConfirmPassword, new { @class = "form-label" })
+        @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control bg-transparent border-custom" })
     </div>
-    <div class="col-md-12">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" class="btn btn-default" value="Registrar" />
-        </div>
+
+    @Html.ValidationSummary("", new { @class = "text-white" })
+
+    <div class="col-md-12 m-auto">
+        <input type="submit" class="btn btn-default bg-custom-yellow text-white" value="Registrar" />
     </div>
 }
 
