@@ -1,11 +1,13 @@
 ﻿@model oficinadomarcio.Models.Mecanico
 
 @{
-    ViewBag.Title = Model.Nome;
+    ViewBag.Title = "Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="container-fluid p-3 m-3">
+<h2>Details</h2>
+
+<div>
     <h4>Mecanico</h4>
     <hr />
     <dl class="dl-horizontal">
@@ -42,9 +44,8 @@
         </dd>
 
     </dl>
-    <p>
-        @Html.ActionLink("Editar", "Edit", new { id = Model.Cpf }) |
-        @Html.ActionLink("Voltar a lista", "Index")
-    </p>
 </div>
-
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Cpf }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

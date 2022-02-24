@@ -4,13 +4,16 @@ using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using Microsoft.AspNet.Identity;
 using oficinadomarcio.Context;
 using oficinadomarcio.Models;
 
 namespace oficinadomarcio.Controllers
 {
+    [Authorize(Roles = "ADMIN")]
     public class VeiculosController : Controller
     {
         private EFContext db = new EFContext();
@@ -38,6 +41,7 @@ namespace oficinadomarcio.Controllers
         }
 
         // GET: Veiculos/Create
+        [AllowAnonymous]
         public ActionResult Create()
         {
             ViewBag.CpfCliente = new SelectList(db.cliente, "Cpf", "Nome");
@@ -49,8 +53,17 @@ namespace oficinadomarcio.Controllers
         // Para obter mais detalhes, confira https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Placa,Marca,Modelo,Ano,CpfCliente")] Veiculo veiculo)
+        [AllowAnonymous]
+        public ActionResult Create([Bind(Include = "Placa,Marca,Modelo,Ano")] Veiculo veiculo)
         {
+            if (User.IsInRole("CLIENTE"))
+            {
+                string currentUserId = User.Identity.GetUserId();
+                ApplicationUser currentUser = db.Users.FirstOrDefault(x => x.Id == currentUserId);
+
+                veiculo.CpfCliente = currentUser.Cpf;
+            }
+
             if (ModelState.IsValid)
             {
                 db.veiculo.Add(veiculo);

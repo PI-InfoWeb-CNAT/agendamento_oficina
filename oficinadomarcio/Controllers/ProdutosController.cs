@@ -11,6 +11,7 @@ using oficinadomarcio.Models;
 
 namespace oficinadomarcio.Controllers
 {
+    [Authorize(Roles = "ADMIN")]
     public class ProdutosController : Controller
     {
         private EFContext db = new EFContext();

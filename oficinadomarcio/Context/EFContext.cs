@@ -29,10 +29,10 @@ namespace oficinadomarcio.Context
         public EFContext() : base(Connection.connectString) { }
         public DbSet<Mecanico> mecanico { get; set; }
         public DbSet<Veiculo> veiculo { get; set; }
-        public DbSet<Cliente> cliente { get; set; }
         public DbSet<Orcamento> orcamento { get; set; }
         public DbSet<Agendamento> agendamento { get; set; }
         public DbSet<Produto> produto { get; set; }
+        public DbSet<Cliente> cliente { get; set; }
         public DbSet<Servico> servico { get; set; }
         public DbSet<Horario> horario { get; set; }
     }

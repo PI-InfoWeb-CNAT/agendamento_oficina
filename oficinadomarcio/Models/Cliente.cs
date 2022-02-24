@@ -26,12 +26,5 @@ namespace oficinadomarcio.Models
         [MaxLength(100)]
         [Index]
         public string Email { get; set; }
-
-        [Required]
-        [MaxLength(255)]
-        public string Senha { get; set; }
-
-        [MaxLength(255)]
-        public string Endereco { get; set; }
     }
 }

@@ -12,19 +12,14 @@ namespace oficinadomarcio.Models
 {
     public class ApplicationUser : IdentityUser
     {
-        [StringLength(11)]
+        [Required]
         public string Cpf { get; set; }
 
         [Required]
-        [MaxLength(100)]
         public string Nome { get; set; }
 
         [MaxLength(15)]
         public string Telefone { get; set; }
-
-        [Required]
-        [DefaultValue("CLIENTE")]
-        public string Role { get; set; }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {

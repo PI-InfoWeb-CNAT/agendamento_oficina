@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
+using oficinadomarcio.Context;
 using oficinadomarcio.Models;
 
 namespace oficinadomarcio.Controllers
@@ -17,6 +19,7 @@ namespace oficinadomarcio.Controllers
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
+        private EFContext db = new EFContext();
 
         public AccountController()
         {
@@ -151,17 +154,31 @@ namespace oficinadomarcio.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new ApplicationUser { 
+                    UserName = model.Email,
+                    Email = model.Email,
+                    Cpf = model.Cpf,
+                    Nome = model.Nome,
+                };
+
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
+                    /* var roleStore = new RoleStore<IdentityRole>(new EFContext());
+                       var roleManager = new RoleManager<IdentityRole>(roleStore);
+                       await roleManager.CreateAsync(new IdentityRole("CLIENTE"));
+                       await roleManager.CreateAsync(new IdentityRole("MECANICO"));
+                       await roleManager.CreateAsync(new IdentityRole("ADMIN"));*/
+                    Cliente cliente = new Cliente();
+                    cliente.Nome = user.Nome;
+                    cliente.Cpf = user.Cpf;
+                    cliente.Email = user.Email;
+                    db.cliente.Add(cliente);
+                    db.SaveChanges();
+
+                    await UserManager.AddToRoleAsync(user.Id, "CLIENTE");
+
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
-                    
-                    // Para obter mais informações sobre como habilitar a confirmação da conta e redefinição de senha, visite https://go.microsoft.com/fwlink/?LinkID=320771
-                    // Enviar um email com este link
-                    // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
-                    // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
-                    // await UserManager.SendEmailAsync(user.Id, "Confirme sua conta", "Confirme sua conta clicando <a href=\"" + callbackUrl + "\">aqui</a>");
 
                     return RedirectToAction("Index", "Home");
                 }

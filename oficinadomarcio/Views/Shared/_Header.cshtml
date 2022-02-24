@@ -6,12 +6,31 @@
         </button>
         <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
             <ul class="navbar-nav">
-                <li class="nav-item">
-                    @Html.ActionLink("ADMIN", "Admin", "Home", null, new { @class = "nav-link" })
-                </li>
-                <li class="nav-item">
-                    @Html.ActionLink("FAÇA SEU AGENDAMENTO", "Create", "Agendamentos", null, new { @class = "nav-link" })
-                </li>
+                @if (User.IsInRole("MECANICO") || User.IsInRole("MECANICO"))
+                {
+                    <li class="nav-item">
+                        @Html.ActionLink("SERVIÇOS", "Index", "Servicos", null, new { @class = "nav-link" })
+                    </li>
+                    <li class="nav-item">
+                        @Html.ActionLink("AGENDAMENTOS", "Index", "Agendamentos", null, new { @class = "nav-link" })
+                    </li>
+                }
+                @if (User.IsInRole("ADMIN"))
+                {
+                    <li class="nav-item">
+                        @Html.ActionLink("ADMIN", "Admin", "Home", null, new { @class = "nav-link" })
+                    </li>
+                }
+                @if (User.IsInRole("CLIENTE"))
+                {
+                    <li class="nav-item">
+                        @Html.ActionLink("REGISTRE SEU VEÍCULO", "Create", "Veiculos", null, new { @class = "nav-link" })
+                    </li>
+                    <li class="nav-item">
+                        @Html.ActionLink("FAÇA SEU AGENDAMENTO", "Create", "Agendamentos", null, new { @class = "nav-link" })
+                    </li>
+                }
+
                 @Html.Partial("_LoginPartial")
             </ul>
         </div>

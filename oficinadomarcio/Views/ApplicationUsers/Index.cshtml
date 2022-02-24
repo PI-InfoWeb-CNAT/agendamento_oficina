@@ -16,10 +16,10 @@
             @Html.DisplayNameFor(model => model.Cpf)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Role)
+            @Html.DisplayNameFor(model => model.Nome)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Nome)
+            @Html.DisplayNameFor(model => model.Roles)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Email)
@@ -36,11 +36,11 @@
         @Html.DisplayFor(modelItem => item.Cpf)
     </td>
     <td>
-        @Html.DisplayFor(modelItem => item.Role)
-    </td>
-    <td>
         @Html.DisplayFor(modelItem => item.Nome)
     </td>
+    <th>
+        @Html.DisplayFor(model => item.Roles)
+    </th>
     <td>
         @Html.DisplayFor(modelItem => item.Email)
     </td>

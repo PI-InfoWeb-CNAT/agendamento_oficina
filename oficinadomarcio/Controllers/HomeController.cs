@@ -21,6 +21,7 @@ namespace oficinadomarcio.Controllers
             return View();
         }
 
+        [Authorize(Roles = "ADMIN")]
         [Route("Admin")]
         public ActionResult Admin()
         {

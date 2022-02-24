@@ -173,12 +173,15 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Context\EFContext.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AgendamentosController.cs" />
     <Compile Include="Controllers\ApplicationUsersController.cs" />
     <Compile Include="Controllers\ClientesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MecanicosController.cs" />
+    <Compile Include="Controllers\OrcamentosController.cs" />
     <Compile Include="Controllers\ProdutosController.cs" />
+    <Compile Include="Controllers\ServicosController.cs" />
     <Compile Include="Controllers\VeiculosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -218,6 +221,26 @@
     <Compile Include="Migrations\202202240331224_AddRoleField.cs" />
     <Compile Include="Migrations\202202240331224_AddRoleField.designer.cs">
       <DependentUpon>202202240331224_AddRoleField.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202202241356309_RefactorUserTable.cs" />
+    <Compile Include="Migrations\202202241356309_RefactorUserTable.designer.cs">
+      <DependentUpon>202202241356309_RefactorUserTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202202241406152_SimplifyUserTable.cs" />
+    <Compile Include="Migrations\202202241406152_SimplifyUserTable.designer.cs">
+      <DependentUpon>202202241406152_SimplifyUserTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202202242009320_ReajusteTabelasCliente.cs" />
+    <Compile Include="Migrations\202202242009320_ReajusteTabelasCliente.designer.cs">
+      <DependentUpon>202202242009320_ReajusteTabelasCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202202242149346_ClientBack.cs" />
+    <Compile Include="Migrations\202202242149346_ClientBack.designer.cs">
+      <DependentUpon>202202242149346_ClientBack.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202202242243102_NewCliente.cs" />
+    <Compile Include="Migrations\202202242243102_NewCliente.designer.cs">
+      <DependentUpon>202202242243102_NewCliente.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -670,11 +693,6 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
-    <Content Include="Views\Clientes\Create.cshtml" />
-    <Content Include="Views\Clientes\Delete.cshtml" />
-    <Content Include="Views\Clientes\Details.cshtml" />
-    <Content Include="Views\Clientes\Edit.cshtml" />
-    <Content Include="Views\Clientes\Index.cshtml" />
     <Content Include="Views\Produtos\Create.cshtml" />
     <Content Include="Views\Produtos\Delete.cshtml" />
     <Content Include="Views\Produtos\Details.cshtml" />
@@ -695,6 +713,26 @@
     <Content Include="Views\ApplicationUsers\Details.cshtml" />
     <Content Include="Views\ApplicationUsers\Edit.cshtml" />
     <Content Include="Views\ApplicationUsers\Index.cshtml" />
+    <Content Include="Views\Clientes\Create.cshtml" />
+    <Content Include="Views\Clientes\Delete.cshtml" />
+    <Content Include="Views\Clientes\Details.cshtml" />
+    <Content Include="Views\Clientes\Edit.cshtml" />
+    <Content Include="Views\Clientes\Index.cshtml" />
+    <Content Include="Views\Agendamentos\Create.cshtml" />
+    <Content Include="Views\Agendamentos\Delete.cshtml" />
+    <Content Include="Views\Agendamentos\Details.cshtml" />
+    <Content Include="Views\Agendamentos\Edit.cshtml" />
+    <Content Include="Views\Agendamentos\Index.cshtml" />
+    <Content Include="Views\Servicos\Create.cshtml" />
+    <Content Include="Views\Servicos\Delete.cshtml" />
+    <Content Include="Views\Servicos\Details.cshtml" />
+    <Content Include="Views\Servicos\Edit.cshtml" />
+    <Content Include="Views\Servicos\Index.cshtml" />
+    <Content Include="Views\Orcamentos\Create.cshtml" />
+    <Content Include="Views\Orcamentos\Delete.cshtml" />
+    <Content Include="Views\Orcamentos\Details.cshtml" />
+    <Content Include="Views\Orcamentos\Edit.cshtml" />
+    <Content Include="Views\Orcamentos\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -735,6 +773,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202202240331224_AddRoleField.resx">
       <DependentUpon>202202240331224_AddRoleField.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202202241356309_RefactorUserTable.resx">
+      <DependentUpon>202202241356309_RefactorUserTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202202241406152_SimplifyUserTable.resx">
+      <DependentUpon>202202241406152_SimplifyUserTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202202242009320_ReajusteTabelasCliente.resx">
+      <DependentUpon>202202242009320_ReajusteTabelasCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202202242149346_ClientBack.resx">
+      <DependentUpon>202202242149346_ClientBack.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202202242243102_NewCliente.resx">
+      <DependentUpon>202202242243102_NewCliente.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

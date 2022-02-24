@@ -11,6 +11,7 @@ using oficinadomarcio.Models;
 
 namespace oficinadomarcio.Controllers
 {
+    [Authorize(Roles = "ADMIN")]
     public class ClientesController : Controller
     {
         private EFContext db = new EFContext();
@@ -47,7 +48,7 @@ namespace oficinadomarcio.Controllers
         // Para obter mais detalhes, confira https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Cpf,Nome,Telefone,Email,Senha,Endereco")] Cliente cliente)
+        public ActionResult Create([Bind(Include = "Cpf,Nome,Telefone,Email")] Cliente cliente)
         {
             if (ModelState.IsValid)
             {
@@ -79,7 +80,7 @@ namespace oficinadomarcio.Controllers
         // Para obter mais detalhes, confira https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Cpf,Nome,Telefone,Email,Senha,Endereco")] Cliente cliente)
+        public ActionResult Edit([Bind(Include = "Cpf,Nome,Telefone,Email")] Cliente cliente)
         {
             if (ModelState.IsValid)
             {

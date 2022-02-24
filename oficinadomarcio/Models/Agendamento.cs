@@ -23,14 +23,17 @@ namespace oficinadomarcio.Models
         public string Descricao { get; set; }
 
         //[DatabaseGenerated(DatabaseGeneratedOption.Computed)]
+        [DisplayName("Data do Agendamento")]
         public DateTime Data_agendamento { get; set; }
 
         [ForeignKey("Horario")]
+        [DisplayName("Horario do Agendamento")]
         public int HorarioId { get; set; }
         public Horario Horario { get; set; }
 
         // Vincular o agendamento ao cliente
         [ForeignKey("Cliente")]
+        [DisplayName("Cliente")]
         public string CpfCliente { get; set; }
         public Cliente Cliente { get; set; }
 

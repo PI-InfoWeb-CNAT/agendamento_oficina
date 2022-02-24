@@ -1,13 +1,23 @@
-﻿    @model oficinadomarcio.Models.RegisterViewModel
+﻿@model oficinadomarcio.Models.RegisterViewModel
 @{
     ViewBag.Title = "Cadastre-se";
 }
 
 <h2 class="text-white d-flex justify-content-center my-5">@ViewBag.Title</h2>
 
-@using (Html.BeginForm("Cadastre-se", "Account", FormMethod.Post, new { @class = "m-auto d-flex flex-column p-4", role = "form" }))
+@using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "m-auto d-flex flex-column p-4", role = "form" }))
 {
     @Html.AntiForgeryToken()
+
+    <div class="my-4">
+        @Html.LabelFor(m => m.Nome, new { @class = "form-label" })
+        @Html.TextBoxFor(m => m.Nome, new { @class = "form-control bg-transparent border-custom" })
+    </div>
+
+    <div class="my-4">
+        @Html.LabelFor(m => m.Cpf, new { @class = "form-label" })
+        @Html.TextBoxFor(m => m.Cpf, new { @class = "form-control bg-transparent border-custom" })
+    </div>
 
     <div class="my-4">
         @Html.LabelFor(m => m.Email, new { @class = "form-label" })
