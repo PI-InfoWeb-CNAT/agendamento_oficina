@@ -7,7 +7,6 @@ using oficinadomarcio.Models;
 using System.Configuration;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
-using oficinadomarcio.Models;
 
 namespace oficinadomarcio.Context
 {
