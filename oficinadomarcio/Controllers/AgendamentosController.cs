@@ -48,7 +48,10 @@ namespace oficinadomarcio.Controllers
 
             ViewBag.CpfCliente = new SelectList(db.cliente, "Cpf", "Nome");
             ViewBag.HorarioId = new SelectList(db.horario, "Id", "Hora");
-            ViewBag.PlacaVeiculo = new SelectList(db.veiculo.Select(v => v.CpfCliente == currentUser.Cpf).ToList(), "Placa", "Marca");
+            ViewBag.PlacaVeiculo = new SelectList(db.veiculo, "Placa", "Marca");
+
+            if (User.IsInRole("CLIENTE")) ViewBag.PlacaVeiculo = new SelectList(db.veiculo.Where(v => v.CpfCliente == currentUser.Cpf), "Placa", "Marca");
+
             return View();
         }
 
@@ -71,7 +74,10 @@ namespace oficinadomarcio.Controllers
 
             ViewBag.CpfCliente = new SelectList(db.cliente, "Cpf", "Nome", agendamento.CpfCliente);
             ViewBag.HorarioId = new SelectList(db.horario, "Id", "Hora", agendamento.HorarioId);
-            ViewBag.PlacaVeiculo = new SelectList(db.veiculo.Select(v => v.CpfCliente == currentUser.Cpf), "Placa", "Marca", agendamento.PlacaVeiculo);
+            ViewBag.PlacaVeiculo = new SelectList(db.veiculo, "Placa", "Marca", agendamento.PlacaVeiculo);
+
+            if (User.IsInRole("CLIENTE")) ViewBag.PlacaVeiculo = new SelectList(db.veiculo.Where(v => v.CpfCliente == currentUser.Cpf), "Placa", "Marca", agendamento.PlacaVeiculo);
+
             return View(agendamento);
         }
 
