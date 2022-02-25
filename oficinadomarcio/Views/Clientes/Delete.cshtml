@@ -39,13 +39,13 @@
 
         @using (Html.BeginForm())
         {
-            @Html.AntiForgeryToken()
+            @Html.AntiForgeryToken()    
 
 
         }
     </div>
     <div class="form-actions no-color d-flex justify-content-center p-1">
-        <input type="submit" value="Delete" class="btn btn-default bg-custom-yellow text-white" /> |
-        @Html.ActionLink("Back to List", "Index")
+        <input type="submit" value="Delete" class="btn btn-default bg-custom-yellow text-white  " /> |
+        @Html.ActionLink("Voltar", "Index")
     </div>
 </div>

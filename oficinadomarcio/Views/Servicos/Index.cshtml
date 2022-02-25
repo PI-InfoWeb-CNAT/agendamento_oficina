@@ -5,12 +5,8 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table id="servicos" class="table">
+<table id="servicos" class="table text-white border-custom">
     <thead>
         <tr>
             <th>
@@ -49,6 +45,10 @@
     </tbody>
 
 </table>
+
+<p>
+    @Html.ActionLink("Criar Novo", "Create")
+</p>
 
 @section scripts
 {
