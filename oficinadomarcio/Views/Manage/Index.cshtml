@@ -1,42 +1,42 @@
 ﻿@model oficinadomarcio.Models.IndexViewModel
 @{
-    ViewBag.Title = "Gerenciar";
+    ViewBag.Title = "Gerenciamento";
 }
 
-<h2>@ViewBag.Title.</h2>
+<h2 class="text-white d-flex justify-content-center">@ViewBag.Title</h2>
 
 <p class="text-success">@ViewBag.StatusMessage</p>
-<div>
-    <h4>Alterar as configurações de conta</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>Senha:</dt>
-        <dd>
-            [
-            @if (Model.HasPassword)
-            {
-                @Html.ActionLink("Alterar sua senha", "ChangePassword")
-            }
-            else
-            {
-                @Html.ActionLink("Criar", "SetPassword")
-            }
-            ]
-        </dd>
-        <dt>Logins externos:</dt>
-        <dd>
-            @Model.Logins.Count [
-            @Html.ActionLink("Gerenciar", "ManageLogins") ]
-        </dd>
-        @*
+<div class="row">
+    <div class="col-md-8 m-auto d-flex justify-content-center">
+
+        <dl class="dl-horizontal">
+            <dt class="mt-4">Senha:</dt>
+            <dd>
+                [
+                @if (Model.HasPassword)
+                {
+                    @Html.ActionLink("Alterar sua senha", "ChangePassword")
+                }
+                else
+                {
+                    @Html.ActionLink("Criar", "SetPassword")
+                }
+                ]
+            </dd>
+            <dt class="mt-4">Logins externos:</dt>
+            <dd>
+                @Model.Logins.Count [
+                @Html.ActionLink("Gerenciar", "ManageLogins") ]
+            </dd>
+            @*
             Os Números de Telefone podem ser usados como um segundo fator de verificação em um sistema de autenticação de dois fatores.
-             
+
              Confira <a href="https://go.microsoft.com/fwlink/?LinkId=403804">este artigo</a>
                 para obter detalhes de como configurar este aplicativo ASP.NET para permitir a autenticação de dois fatores usando SMS.
-             
+
              Remova a marca de comentário do bloco a seguir depois de configurar a autenticação de dois fatores
-        *@
-        @*  
+            *@
+            @*
             <dt>Número de Telefone:</dt>
             <dd>
                 @(Model.PhoneNumber ?? "None")
@@ -55,33 +55,33 @@
                     <text>[&nbsp;&nbsp;@Html.ActionLink("Add", "AddPhoneNumber")
                 }
             </dd>
-        *@
-        <dt>Autenticação de dois fatores:</dt>
-        <dd>
-            <p>
-                Não há nenhum provedor de autenticação de dois fatores configurado. Confira <a href="https://go.microsoft.com/fwlink/?LinkId=403804">este artigo</a>
-                para obter detalhes de como configurar este aplicativo ASP.NET para permitir a autenticação de dois fatores.
-            </p>
+            *@
+            @*<dt>Autenticação de dois fatores:</dt>
+            <dd>
+                <p>
+                    Não há nenhum provedor de autenticação de dois fatores configurado. Confira <a href="https://go.microsoft.com/fwlink/?LinkId=403804">este artigo</a>
+                    para obter detalhes de como configurar este aplicativo ASP.NET para permitir a autenticação de dois fatores.
+                </p>*@
             @*@if (Model.TwoFactor)
+            {
+                using (Html.BeginForm("DisableTwoFactorAuthentication", "Manage", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
                 {
-                    using (Html.BeginForm("DisableTwoFactorAuthentication", "Manage", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-                    {
-                        @Html.AntiForgeryToken()
-                        <text>Habilitado
-                        <input type="submit" value="Desabilitar" class="btn btn-link" />
-                        </text>
-                    }
+                    @Html.AntiForgeryToken()
+                    <text>Habilitado
+                    <input type="submit" value="Desabilitar" class="btn btn-link" />
+                    </text>
                 }
-                else
+            }
+            else
+            {
+                using (Html.BeginForm("EnableTwoFactorAuthentication", "Manage", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
                 {
-                    using (Html.BeginForm("EnableTwoFactorAuthentication", "Manage", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-                    {
-                        @Html.AntiForgeryToken()
-                        <text>Desabilitado
-                        <input type="submit" value="Habilitar" class="btn btn-link" />
-                        </text>
-                    }
-                }*@
-        </dd>
-    </dl>
+                    @Html.AntiForgeryToken()
+                    <text>Desabilitado
+                    <input type="submit" value="Habilitar" class="btn btn-link" />
+                    </text>
+                }
+            }*@
+        </dl>
+    </div>
 </div>

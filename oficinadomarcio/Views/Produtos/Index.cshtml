@@ -6,8 +6,8 @@
 }
 
 <div class="container-fluid">
-    @Html.ActionLink("NOVO PRODUTO", "Create", "Produtos", null, new { @class = "btn text-white bg-primary my-4", role = "button" })
-    <table id="produtos" class="table table-bordered table-striped">
+
+    <table id="produtos" class="table table-bordered table-striped text-white mt-5 border-custom">
         <thead>
             <tr>
                 <th>
@@ -55,6 +55,9 @@
             }
         </tbody>
     </table>
+
+    @Html.ActionLink("NOVO PRODUTO", "Create", "Produtos", null, new { @class = "btn btn-default bg-custom-yellow text-white mt-4", role = "button" })
+
 </div>
 
 @section scripts

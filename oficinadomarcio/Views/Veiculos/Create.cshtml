@@ -4,71 +4,72 @@
     ViewBag.Title = "Veiculos";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<h2 class="text-white d-flex justify-content-center my-5">Registro de veículo</h2>
 
-<div class="container-fluid p-3 m-3">
-    @using (Html.BeginForm())
-    {
-        @Html.AntiForgeryToken()
-
-    <div class="form-horizontal">
-        <h4>Veiculo</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.Placa, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Placa, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Placa, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Marca, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Marca, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Marca, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Modelo, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Modelo, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Modelo, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Ano, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Ano, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Ano, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        @if (!User.IsInRole("CLIENTE"))
+<div class="row">
+    <div class="col-md-8 m-auto d-flex justify-content-center">
+        @using (Html.BeginForm())
         {
-            <div class="form-group">
-                @Html.LabelFor(model => model.CpfCliente, "Cliente", htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.DropDownList("CpfCliente", null, htmlAttributes: new { @class = "form-control" })
-                    @Html.ValidationMessageFor(model => model.CpfCliente, "", new { @class = "text-danger" })
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+                @Html.ValidationSummary(true, "", new { @class = "text-white" })
+                <div class="form-group mt-4">
+                    @Html.LabelFor(model => model.Placa, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Placa, new { htmlAttributes = new { @class = "form-control bg-transparent border-custom" } })
+                        @Html.ValidationMessageFor(model => model.Placa, "", new { @class = "text-white" })
+                    </div>
+                </div>
+
+                <div class="form-group mt-4">
+                    @Html.LabelFor(model => model.Marca, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Marca, new { htmlAttributes = new { @class = "form-control bg-transparent border-custom" } })
+                        @Html.ValidationMessageFor(model => model.Marca, "", new { @class = "text-white" })
+                    </div>
+                </div>
+
+                <div class="form-group mt-4">
+                    @Html.LabelFor(model => model.Modelo, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Modelo, new { htmlAttributes = new { @class = "form-control bg-transparent border-custom" } })
+                        @Html.ValidationMessageFor(model => model.Modelo, "", new { @class = "text-white" })
+                    </div>
+                </div>
+
+                <div class="form-group mt-4">
+                    @Html.LabelFor(model => model.Ano, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Ano, new { htmlAttributes = new { @class = "form-control bg-transparent border-custom" } })
+                        @Html.ValidationMessageFor(model => model.Ano, "", new { @class = "text-white" })
+                    </div>
+                </div>
+
+                @if (!User.IsInRole("CLIENTE"))
+                {
+                    <div class="form-group mt-4">
+                        @Html.LabelFor(model => model.CpfCliente, "Cliente", htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.DropDownList("CpfCliente", null, htmlAttributes: new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.CpfCliente, "", new { @class = "text-white" })
+                        </div>
+                    </div>
+                }
+
+                <div class="form-group mt-4">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Create" class="btn btn-default bg-custom-yellow text-white mt-3 mb-3" />
+                    </div>
                 </div>
             </div>
-        }
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn bg-primary text-white mt-3 mb-3" />
+            <div class="mt-4">
+                @Html.ActionLink("Voltar", "Index")
             </div>
-        </div>
-    </div>
-    }
-
-    <div>
-        @Html.ActionLink("Voltar", "Index")
+        }
     </div>
 </div>
+
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }
