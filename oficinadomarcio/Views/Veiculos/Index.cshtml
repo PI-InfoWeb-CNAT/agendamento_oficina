@@ -61,7 +61,23 @@
 {
     <script>
         $(document).ready(function () {
-            $("#veiculos").DataTable();
+            $("#veiculos").DataTable({
+                "language": {
+                    "lengthMenu": "Mostrar MENU registros por página",
+                    "zeroRecords": "Nada encontrado",
+                    "info": "Mostrando página PAGE de PAGES",
+                    "infoEmpty": "Nenhum registro disponível",
+                    "search": "Pesquisar",
+                    "paginate": {
+                        "next": "Próximo",
+                        "previous": "Anterior",
+                        "first": "Primeiro",
+                        "last": "Último"
+                    },
+                    "next": "Próximo",
+                    "infoFiltered": "(filtrado de MAX registros no total)"
+                }
+            });
             $(".paginate_button").css({
                 "margin": "0 10px"
             })

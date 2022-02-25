@@ -10,55 +10,87 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Cliente.Nome)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Horario.Hora)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Veiculo.Marca)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Titulo)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Descricao)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Data_agendamento)
-        </th>
-        <th></th>
-    </tr>
+<table id="agendamentos" class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Cliente.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Horario.Hora)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Veiculo.Marca)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Titulo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Descricao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Data_agendamento)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Cliente.Nome)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Horario.Hora)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Veiculo.Marca)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Titulo)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Descricao)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Data_agendamento)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
-}
-
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cliente.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Horario.Hora)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Veiculo.Marca)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Titulo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Descricao)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Data_agendamento)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                </td>
+            </tr>
+        }
+    </tbody>
 </table>
+
+@section scripts
+{
+    <script>
+        $(document).ready(function () {
+            $("#agendamentos").DataTable({
+                "language": {
+                    "lengthMenu": "Mostrar MENU registros por página",
+                    "zeroRecords": "Nada encontrado",
+                    "info": "Mostrando página PAGE de PAGES",
+                    "infoEmpty": "Nenhum registro disponível",
+                    "search": "Pesquisar",
+                    "paginate": {
+                        "next": "Próximo",
+                        "previous": "Anterior",
+                        "first": "Primeiro",
+                        "last": "Último"
+                    },
+                    "next": "Próximo",
+                    "infoFiltered": "(filtrado de MAX registros no total)"
+                }
+            });
+            $(".paginate_button").css({
+                "margin": "0 10px"
+            })
+        })
+    </script>
+}

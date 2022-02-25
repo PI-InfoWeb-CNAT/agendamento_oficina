@@ -10,49 +10,70 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Nome)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Telefone)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Email)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Senha)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Endereco)
-        </th>
-        <th></th>
-    </tr>
+<table id="clientes" class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Telefone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Nome)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Telefone)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Email)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Senha)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Endereco)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Cpf }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Cpf }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Cpf })
-        </td>
-    </tr>
-}
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Telefone)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Cpf }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.Cpf }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Cpf })
+                </td>
+            </tr>
+        }
+    </tbody>
 
 </table>
+
+@section scripts
+{
+    <script>
+        $(document).ready(function () {
+            $("#clientes").DataTable({
+                "language": {
+                    "lengthMenu": "Mostrar MENU registros por página",
+                    "zeroRecords": "Nada encontrado",
+                    "info": "Mostrando página PAGE de PAGES",
+                    "infoEmpty": "Nenhum registro disponível",
+                    "search": "Pesquisar",
+                    "paginate": {
+                        "next": "Próximo",
+                        "previous": "Anterior",
+                        "first": "Primeiro",
+                        "last": "Último"
+                    },
+                    "next": "Próximo",
+                    "infoFiltered": "(filtrado de MAX registros no total)"
+                }
+            });
+            $(".paginate_button").css({
+                "margin": "0 10px"
+            })
+        })
+    </script>
+}
