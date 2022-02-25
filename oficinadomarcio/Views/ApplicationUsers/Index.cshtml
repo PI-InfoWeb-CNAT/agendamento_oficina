@@ -5,12 +5,8 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table id="usuarios" class="table">
+<table id="usuarios" class="table text-white border-custom">
     <thead>
         <tr>
             <th>
@@ -62,13 +58,17 @@
 
 </table>
 
+<p class="mt-2">
+    @Html.ActionLink("Criar Novo", "Create")
+</p>
+
 @section scripts
 {
     <script>
         $(document).ready(function () {
             $("#usuarios").DataTable({
                 "language": {
-                    "lengthMenu": "Mostrar MENU registros por página",
+                    "lengthMenu": "",
                     "zeroRecords": "Nada encontrado",
                     "info": "Mostrando página PAGE de PAGES",
                     "infoEmpty": "Nenhum registro disponível",

@@ -7,9 +7,11 @@
 
 <h2>Details</h2>
 
-<div>
-    <h4>Servico</h4>
-    <hr />
+<div<div class="row">
+    <div class="col-md-8 m-auto d-flex justify-content-center mt-4">>
+    
+    <h4 class="text-white d-flex justify-content-center">Servico</h4>
+   
     <dl class="dl-horizontal">
         <dt>
             @Html.DisplayNameFor(model => model.Descricao)
@@ -36,8 +38,10 @@
         </dd>
 
     </dl>
-</div>
+
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Voltar", "Index")
 </p>
+    </div>
+</div>
