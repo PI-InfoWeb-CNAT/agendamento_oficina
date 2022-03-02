@@ -6,46 +6,56 @@
 }
 
 
-@using (Html.BeginForm("Create", "Agendamento", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "m-auto d-flex flex-column p-4", role = "form" }))
+@using (Html.BeginForm("Create", "Agendamentos", new { }, FormMethod.Post, new { @class = "m-auto d-flex flex-column p-4", role = "form" }))
 {
     @Html.AntiForgeryToken()
 
-    <div class="form-horizontal">
-        <h4 class="text-white d-flex justify-content-center">Agendamento</h4>
-       
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.Titulo, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Titulo, new { htmlAttributes = new { @class = "form-control bg-transparent border-custom" } })
-                @Html.ValidationMessageFor(model => model.Titulo, "", new { @class = "text-danger" })
-            </div>
-        </div>
+<div class="form-horizontal">
+    <h4 class="text-white d-flex justify-content-center">Agendamento</h4>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Descricao, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Descricao, new { htmlAttributes = new { @class = "form-control bg-transparent border-custom" } })
-                @Html.ValidationMessageFor(model => model.Descricao, "", new { @class = "text-danger" })
-            </div>
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(model => model.Titulo, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Titulo, new { htmlAttributes = new { @class = "form-control bg-transparent border-custom" } })
+            @Html.ValidationMessageFor(model => model.Titulo, "", new { @class = "text-danger" })
         </div>
+    </div>
 
-        <div class="form-group">
+    <div class="form-group">
+        @Html.LabelFor(model => model.Descricao, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Descricao, new { htmlAttributes = new { @class = "form-control bg-transparent border-custom" } })
+            @Html.ValidationMessageFor(model => model.Descricao, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    @*    <div class="form-group">
             @Html.LabelFor(model => model.Data_agendamento, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Data_agendamento, new { htmlAttributes = new { @class = "form-control bg-transparent border-custom" } })
                 @Html.ValidationMessageFor(model => model.Data_agendamento, "", new { @class = "text-danger" })
             </div>
-        </div>
+        </div>*@
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.HorarioId, "Horario", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("HorarioId", null, htmlAttributes: new { @class = "form-control bg-transparent border-custom" })
-                @Html.ValidationMessageFor(model => model.HorarioId, "", new { @class = "text-danger" })
-            </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Data_agendamento, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <input type="date" name="Data_agendamento" id="Data_agendamento" class="form-control bg-transparent border-custom" />
+            @Html.ValidationMessageFor(model => model.Data_agendamento, "", new { @class = "text-danger", id = "custom-validator" })
         </div>
+    </div>
 
+    <div class="form-group">
+        @Html.LabelFor(model => model.HorarioId, "Horario", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownList("HorarioId", null, htmlAttributes: new { @class = "form-control bg-transparent border-custom" })
+            @Html.ValidationMessageFor(model => model.HorarioId, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    @if (!User.IsInRole("CLIENTE"))
+    {
         <div class="form-group">
             @Html.LabelFor(model => model.CpfCliente, "Cliente", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -53,21 +63,22 @@
                 @Html.ValidationMessageFor(model => model.CpfCliente, "", new { @class = "text-danger" })
             </div>
         </div>
+    }
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.PlacaVeiculo, "PlacaVeiculo", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("PlacaVeiculo", null, htmlAttributes: new { @class = "form-control bg-transparent border-custom" })
-                @Html.ValidationMessageFor(model => model.PlacaVeiculo, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group mt-2">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Criar" class="btn btn-default bg-custom-yellow text-white" />
-            </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.PlacaVeiculo, "PlacaVeiculo", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownList("PlacaVeiculo", null, htmlAttributes: new { @class = "form-control bg-transparent border-custom" })
+            @Html.ValidationMessageFor(model => model.PlacaVeiculo, "", new { @class = "text-danger" })
         </div>
     </div>
+
+    <div class="form-group mt-2">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Criar" class="btn btn-default bg-custom-yellow text-white" />
+        </div>
+    </div>
+</div>
 
     <div class="mt-2">
         @Html.ActionLink("Voltar", "Index")

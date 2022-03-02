@@ -12,6 +12,9 @@
                         @Html.ActionLink("SERVIÇOS", "Index", "Servicos", null, new { @class = "nav-link" })
                     </li>
                     <li class="nav-item">
+                        @Html.ActionLink("ORCAMENTOS", "Index", "Orcamentos", null, new { @class = "nav-link" })
+                    </li>
+                    <li class="nav-item">
                         @Html.ActionLink("AGENDAMENTOS", "Index", "Agendamentos", null, new { @class = "nav-link" })
                     </li>
                 }
@@ -28,6 +31,9 @@
                     </li>
                     <li class="nav-item">
                         @Html.ActionLink("FAÇA SEU AGENDAMENTO", "Create", "Agendamentos", null, new { @class = "nav-link" })
+                    </li>
+                    <li class="nav-item">
+                        @Html.ActionLink("MEUS AGENDAMENTOS", "UserManage", "Agendamentos", null, new { @class = "nav-link" })
                     </li>
                 }
 

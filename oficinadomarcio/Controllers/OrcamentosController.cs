@@ -11,7 +11,7 @@ using oficinadomarcio.Models;
 
 namespace oficinadomarcio.Controllers
 {
-    [Authorize(Roles = "ADMIN")]
+    [Authorize(Roles = "ADMIN,MECANICO")]
     public class OrcamentosController : Controller
     {
         private EFContext db = new EFContext();

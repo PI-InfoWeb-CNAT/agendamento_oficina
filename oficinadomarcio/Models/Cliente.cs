@@ -12,7 +12,6 @@ namespace oficinadomarcio.Models
     public class Cliente
     {
         [Key]
-        [StringLength(11)]
         public string Cpf { get; set; }
 
         [Required]

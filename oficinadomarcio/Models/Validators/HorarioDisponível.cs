@@ -28,7 +28,10 @@ namespace oficinadomarcio.Models
 
             foreach (Agendamento ag in agendamentos)
             {
-                if (ag.HorarioId == agendamento.HorarioId) existe = true;
+                if (ag.HorarioId == agendamento.HorarioId)
+                {
+                    existe = true;
+                };
             }
 
             return existe ? new ValidationResult("Horário não disponível") : ValidationResult.Success;

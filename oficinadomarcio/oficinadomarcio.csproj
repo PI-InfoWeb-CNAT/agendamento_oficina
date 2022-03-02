@@ -242,6 +242,10 @@
     <Compile Include="Migrations\202202242243102_NewCliente.designer.cs">
       <DependentUpon>202202242243102_NewCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202203021521146_ChangeClient.cs" />
+    <Compile Include="Migrations\202203021521146_ChangeClient.designer.cs">
+      <DependentUpon>202203021521146_ChangeClient.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Agendamento.cs" />
@@ -733,6 +737,7 @@
     <Content Include="Views\Orcamentos\Details.cshtml" />
     <Content Include="Views\Orcamentos\Edit.cshtml" />
     <Content Include="Views\Orcamentos\Index.cshtml" />
+    <Content Include="Views\Agendamentos\UserManage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -788,6 +793,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202202242243102_NewCliente.resx">
       <DependentUpon>202202242243102_NewCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202203021521146_ChangeClient.resx">
+      <DependentUpon>202203021521146_ChangeClient.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

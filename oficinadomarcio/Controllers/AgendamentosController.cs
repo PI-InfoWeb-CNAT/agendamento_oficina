@@ -24,6 +24,16 @@ namespace oficinadomarcio.Controllers
             return View(agendamento.ToList());
         }
 
+        [AllowAnonymous]
+        public ActionResult UserManage()
+        {
+            string currentUserId = User.Identity.GetUserId();
+            ApplicationUser currentUser = db.Users.FirstOrDefault(x => x.Id == currentUserId);
+
+            var agendamento = db.agendamento.Include(a => a.Cliente).Include(a => a.Horario).Include(a => a.Veiculo).Where(a => a.CpfCliente == currentUser.Cpf);
+            return View(agendamento.ToList());
+        }
+
         // GET: Agendamentos/Details/5
         public ActionResult Details(int? id)
         {
@@ -46,8 +56,24 @@ namespace oficinadomarcio.Controllers
             string currentUserId = User.Identity.GetUserId();
             ApplicationUser currentUser = db.Users.FirstOrDefault(x => x.Id == currentUserId);
 
+            var horarios = db.horario.ToList();
+            var agendamentos = db.agendamento.Where(a => a.Data_agendamento == DateTime.Today).ToList();
+            var newHorarios = horarios;
+
+            for (int i = 0; i < agendamentos.Count; i++)
+            {
+                for (int j = 0; horarios.Count > j; j++)
+                {
+                    if (agendamentos[i].HorarioId == horarios[j].Id)
+                    {
+                        var removeHorario = newHorarios.FirstOrDefault(h => h.Id == horarios[j].Id);
+                        newHorarios.Remove(removeHorario);
+                    }
+                }
+            }
+
             ViewBag.CpfCliente = new SelectList(db.cliente, "Cpf", "Nome");
-            ViewBag.HorarioId = new SelectList(db.horario, "Id", "Hora");
+            ViewBag.HorarioId = new SelectList(newHorarios, "Id", "Hora");
             ViewBag.PlacaVeiculo = new SelectList(db.veiculo, "Placa", "Marca");
 
             if (User.IsInRole("CLIENTE")) ViewBag.PlacaVeiculo = new SelectList(db.veiculo.Where(v => v.CpfCliente == currentUser.Cpf), "Placa", "Marca");
@@ -60,42 +86,90 @@ namespace oficinadomarcio.Controllers
         // Para obter mais detalhes, confira https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [HorarioDisponivel]
+        [AllowAnonymous]
         public ActionResult Create([Bind(Include = "Id,Titulo,Descricao,Data_agendamento,HorarioId,CpfCliente,PlacaVeiculo")] Agendamento agendamento)
         {
+            string currentUserId = User.Identity.GetUserId();
+            ApplicationUser currentUser = db.Users.FirstOrDefault(x => x.Id == currentUserId);
+
+            if (User.IsInRole("CLIENTE"))
+            {
+                agendamento.CpfCliente = currentUser.Cpf;
+            }
+
             if (ModelState.IsValid)
             {
                 db.agendamento.Add(agendamento);
                 db.SaveChanges();
+                if (User.IsInRole("CLIENTE")) return RedirectToAction("UserManage");
                 return RedirectToAction("Index");
             }
 
-            string currentUserId = User.Identity.GetUserId();
-            ApplicationUser currentUser = db.Users.FirstOrDefault(x => x.Id == currentUserId);
+            var horarios = db.horario.ToList();
+            var agendamentos = db.agendamento.Where(a => a.Data_agendamento == DateTime.Today).ToList();
+            var newHorarios = horarios;
 
-            ViewBag.CpfCliente = new SelectList(db.cliente, "Cpf", "Nome", agendamento.CpfCliente);
-            ViewBag.HorarioId = new SelectList(db.horario, "Id", "Hora", agendamento.HorarioId);
-            ViewBag.PlacaVeiculo = new SelectList(db.veiculo, "Placa", "Marca", agendamento.PlacaVeiculo);
+            for (int i = 0; i < agendamentos.Count; i++)
+            {
+                for (int j = 0; horarios.Count > j; j++)
+                {
+                    if (agendamentos[i].HorarioId == horarios[j].Id)
+                    {
+                        var removeHorario = newHorarios.FirstOrDefault(h => h.Id == horarios[j].Id);
+                        newHorarios.Remove(removeHorario);
+                    }
+                }
+            }
+
+            ViewBag.CpfCliente = new SelectList(db.cliente, "Cpf", "Nome");
+            ViewBag.HorarioId = new SelectList(newHorarios, "Id", "Hora");
+            ViewBag.PlacaVeiculo = new SelectList(db.veiculo, "Placa", "Marca");
 
             if (User.IsInRole("CLIENTE")) ViewBag.PlacaVeiculo = new SelectList(db.veiculo.Where(v => v.CpfCliente == currentUser.Cpf), "Placa", "Marca", agendamento.PlacaVeiculo);
 
+            if (User.IsInRole("CLIENTE")) return View("UserManage", agendamento);
             return View(agendamento);
         }
 
         // GET: Agendamentos/Edit/5
+        [AllowAnonymous]
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
+
             Agendamento agendamento = db.agendamento.Find(id);
+
             if (agendamento == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.CpfCliente = new SelectList(db.cliente, "Cpf", "Nome", agendamento.CpfCliente);
-            ViewBag.HorarioId = new SelectList(db.horario, "Id", "Hora", agendamento.HorarioId);
-            ViewBag.PlacaVeiculo = new SelectList(db.veiculo, "Placa", "Marca", agendamento.PlacaVeiculo);
+
+            string currentUserId = User.Identity.GetUserId();
+            ApplicationUser currentUser = db.Users.FirstOrDefault(x => x.Id == currentUserId);
+
+            var horarios = db.horario.ToList();
+            var agendamentos = db.agendamento.Where(a => a.Data_agendamento == DateTime.Today).ToList();
+            var newHorarios = horarios;
+
+            for (int i = 0; i < agendamentos.Count; i++)
+            {
+                for (int j = 0; horarios.Count > j; j++)
+                {
+                    if (agendamentos[i].HorarioId == horarios[j].Id)
+                    {
+                        var removeHorario = newHorarios.FirstOrDefault(h => h.Id == horarios[j].Id);
+                        newHorarios.Remove(removeHorario);
+                    }
+                }
+            }
+
+            ViewBag.CpfCliente = new SelectList(db.cliente, "Cpf", "Nome");
+            ViewBag.HorarioId = new SelectList(newHorarios, "Id", "Hora");
+            ViewBag.PlacaVeiculo = new SelectList(db.veiculo, "Placa", "Marca");
             return View(agendamento);
         }
 

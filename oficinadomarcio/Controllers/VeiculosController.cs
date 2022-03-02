@@ -72,6 +72,7 @@ namespace oficinadomarcio.Controllers
             }
 
             ViewBag.CpfCliente = new SelectList(db.cliente, "Cpf", "Nome", veiculo.CpfCliente);
+
             return View(veiculo);
         }
 
